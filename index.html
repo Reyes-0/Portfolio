@@ -12,7 +12,7 @@
 <body class="bg-gray-900 text-white">
   <!-- Navigation -->
   <nav class="custom-navbar">
-    <ul>
+    <ul class="flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-center">
       <li><a class="active" href="#hero-about">Home</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -26,23 +26,23 @@
   <section id="hero-about" class="py-10">
     <!-- Hero Section -->
     <div id="hero" class="text-center py-10">
-      <h1 class="text-4xl font-bold">Hi, I'm Arkar Kyaw</h1>
-      <h2 class="text-lg text-gray-400 mt-2">AI & Data Engineer | Problem Solver | Tech Enthusiast</h2>
+      <h1 class="text-4xl md:text-5xl font-bold">Hi, I'm Arkar Kyaw</h1>
+      <h2 class="text-lg md:text-xl text-gray-400 mt-2">AI & Data Engineer | Problem Solver | Tech Enthusiast</h2>
     </div>
     <!-- About Me Section -->
     <div id="about-me" class="py-10 bg-gray-800">
       <div class="max-w-4xl mx-auto px-4">
-        <h2 class="text-3xl font-semibold mb-5 text-center">About Me</h2>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center">About Me</h2>
         <p class="text-lg leading-relaxed">
           I am an AI & Data Engineer with expertise in machine learning, big data, and cloud computing. I specialize in building intelligent systems that solve complex problems and derive valuable insights from data.
         </p>
-        <h3 class="mt-5 text-xl font-semibold">Technical Skills</h3>
+        <h3 class="mt-5 text-xl md:text-2xl font-semibold">Technical Skills</h3>
         <ul class="list-disc list-inside space-y-2">
           <li>Python, TensorFlow, PyTorch</li>
           <li>SQL / NoSQL, Apache Spark</li>
           <li>AWS / Cloud, Docker, Kubernetes</li>
         </ul>
-        <h3 class="mt-5 text-xl font-semibold">Areas of Interest</h3>
+        <h3 class="mt-5 text-xl md:text-2xl font-semibold">Areas of Interest</h3>
         <p class="leading-relaxed">Machine Learning, NLP, Computer Vision, Big Data Analytics</p>
       </div>
     </div>
@@ -51,15 +51,15 @@
   <!-- Projects -->
   <section id="projects" class="py-10 bg-gray-900">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-semibold mb-5 text-center">Projects</h2>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Machine Learning Pipeline</h3>
+          <h3 class="text-xl md:text-2xl font-semibold mb-2">Machine Learning Pipeline</h3>
           <p class="leading-relaxed">Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow.</p>
           <a href="https://github.com/your-repo-link" class="text-blue-400 hover:text-blue-300 block mt-4">View Code</a>
         </div>
         <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">ETL Pipeline with Airflow</h3>
+          <h3 class="text-xl md:text-2xl font-semibold mb-2">ETL Pipeline with Airflow</h3>
           <p class="leading-relaxed">Developed a robust ETL pipeline using Apache Airflow for orchestrating data workflows.</p>
           <a href="https://github.com/your-repo-link" class="text-blue-400 hover:text-blue-300 block mt-4">View Code</a>
         </div>
@@ -70,7 +70,7 @@
   <!-- Skills -->
   <section id="skills" class="py-10 bg-gray-800">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-semibold mb-5 text-center">Skills</h2>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center">Skills</h2>
       <div class="space-y-6">
         <div class="flex items-center justify-between">
           <span class="font-medium">Python</span>
@@ -100,10 +100,10 @@
   <!-- Experience -->
   <section id="experience" class="py-10 bg-gray-900">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-semibold mb-5 text-center">Work Experience</h2>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center">Work Experience</h2>
       <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-semibold mb-2">Data Engineer - TechCorp Inc.</h3>
-        <p class="text-sm text-gray-400 mb-2">June 2021 - Present</p>
+        <h3 class="text-xl md:text-2xl font-semibold mb-2">Data Engineer - TechCorp Inc.</h3>
+        <p class="text-sm md:text-base text-gray-400 mb-2">June 2021 - Present</p>
         <ul class="list-disc list-inside space-y-2">
           <li>Designed scalable ETL pipelines using Apache Spark and AWS Glue.</li>
           <li>Optimized data storage and retrieval processes.</li>
@@ -115,10 +115,10 @@
   <!-- Education -->
   <section id="qualification" class="py-10 bg-gray-800">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-semibold mb-5 text-center">Education</h2>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center">Education</h2>
       <div class="bg-gray-900 p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-semibold mb-2">BSc in Computer Science</h3>
-        <p class="text-sm text-gray-400">National University of Singapore, 2021</p>
+        <h3 class="text-xl md:text-2xl font-semibold mb-2">BSc in Computer Science</h3>
+        <p class="text-sm md:text-base text-gray-400">National University of Singapore, 2021</p>
       </div>
     </div>
   </section>
@@ -126,7 +126,7 @@
   <!-- Contact -->
   <section id="contact-me" class="py-10 bg-gray-900">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-semibold mb-5 text-center">Contact</h2>
+      <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center">Contact</h2>
       <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4">
         <input type="text" name="name" placeholder="Your Name" class="w-full p-3 bg-gray-700 rounded">
         <input type="email" name="email" placeholder="Your Email" class="w-full p-3 bg-gray-700 rounded">
