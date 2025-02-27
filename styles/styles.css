@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+  background-color: #1a202c;
+  line-height: 1.6; /* Ensures consistent line spacing */
+}
+
+/* Navigation */
+.custom-navbar {
+  background-color: #2d3748;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin: 10px auto; /* Keeps it centered */
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid #3b82f6; /* Added border color */
+  position: sticky; /* Ensures it stays at the top */
+  top: 10px; /* Keeps a small margin at the top */
+  z-index: 1000; /* Keeps it above other content */
+}
+
+.custom-navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.custom-navbar a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: background 0.3s ease-in-out;
+}
+
+.custom-navbar a:hover,
+.custom-navbar a.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Sections */
+section {
+  padding: 5rem 0;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Skill Scale */
+.w-4\/5 {
+  width: 80%;
+}
+
+.h-2 {
+  height: 0.5rem;
+}
+
+.bg-gray-700 {
+  background-color: #4a5568;
+}
+
+.bg-green-500 {
+  background-color: #48bb78;
+}
+
+.bg-yellow-500 {
+  background-color: #ecc94b;
+}
+
+.bg-red-500 {
+  background-color: #f56565;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* Buttons */
+.bg-blue-500 {
+  background-color: #3b82f6;
+}
+
+.bg-blue-500:hover {
+  background-color: #2563eb;
+}
+
+.text-blue-400 {
+  color: #60a5fa;
+}
+
+.text-blue-400:hover {
+  color: #3b82f6;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="email"],
+textarea {
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}

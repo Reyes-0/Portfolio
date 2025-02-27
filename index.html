@@ -3,248 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arkar| AI & Data Engineer</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Arkar Kyaw | AI & Data Engineer</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#home">Arkar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about-me">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#qualification">Qualification</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact-me">Contact</a></li>
+<body class="bg-gray-900 text-white">
+  <!-- Navigation -->
+  <nav class="custom-navbar">
+    <ul>
+      <li><a class="active" href="#hero-about">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#qualification">Education</a></li>
+      <li><a href="#contact-me">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero & About Me Section -->
+  <section id="hero-about" class="py-10">
+    <!-- Hero Section -->
+    <div id="hero" class="text-center py-10">
+      <h1 class="text-4xl font-bold">Hi, I'm Arkar Kyaw</h1>
+      <h2 class="text-lg text-gray-400 mt-2">AI & Data Engineer | Problem Solver | Tech Enthusiast</h2>
+    </div>
+    <!-- About Me Section -->
+    <div id="about-me" class="py-10 bg-gray-800">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-semibold mb-5 text-center">About Me</h2>
+        <p class="text-lg leading-relaxed">
+          I am an AI & Data Engineer with expertise in machine learning, big data, and cloud computing. I specialize in building intelligent systems that solve complex problems and derive valuable insights from data.
+        </p>
+        <h3 class="mt-5 text-xl font-semibold">Technical Skills</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Python, TensorFlow, PyTorch</li>
+          <li>SQL / NoSQL, Apache Spark</li>
+          <li>AWS / Cloud, Docker, Kubernetes</li>
+        </ul>
+        <h3 class="mt-5 text-xl font-semibold">Areas of Interest</h3>
+        <p class="leading-relaxed">Machine Learning, NLP, Computer Vision, Big Data Analytics</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-10 bg-gray-900">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-semibold mb-5 text-center">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">Machine Learning Pipeline</h3>
+          <p class="leading-relaxed">Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow.</p>
+          <a href="https://github.com/your-repo-link" class="text-blue-400 hover:text-blue-300 block mt-4">View Code</a>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2">ETL Pipeline with Airflow</h3>
+          <p class="leading-relaxed">Developed a robust ETL pipeline using Apache Airflow for orchestrating data workflows.</p>
+          <a href="https://github.com/your-repo-link" class="text-blue-400 hover:text-blue-300 block mt-4">View Code</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-10 bg-gray-800">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-semibold mb-5 text-center">Skills</h2>
+      <div class="space-y-6">
+        <div class="flex items-center justify-between">
+          <span class="font-medium">Python</span>
+          <div class="w-4/5 h-2 bg-gray-700 rounded-full relative">
+            <div class="absolute left-0 top-0 h-full w-3/4 bg-green-500 rounded-full"></div>
+            <span class="absolute -top-4 right-1/2 transform translate-x-1/2 bg-gray-800 px-2 py-1 rounded text-xs">Intermediate</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="font-medium">TensorFlow / PyTorch</span>
+          <div class="w-4/5 h-2 bg-gray-700 rounded-full relative">
+            <div class="absolute left-0 top-0 h-full w-4/5 bg-yellow-500 rounded-full"></div>
+            <span class="absolute -top-4 right-1/3 transform translate-x-1/2 bg-gray-800 px-2 py-1 rounded text-xs">Advanced</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="font-medium">SQL / NoSQL</span>
+          <div class="w-4/5 h-2 bg-gray-700 rounded-full relative">
+            <div class="absolute left-0 top-0 h-full w-2/3 bg-red-500 rounded-full"></div>
+            <span class="absolute -top-4 right-1/4 transform translate-x-1/2 bg-gray-800 px-2 py-1 rounded text-xs">Beginner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-10 bg-gray-900">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-semibold mb-5 text-center">Work Experience</h2>
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Data Engineer - TechCorp Inc.</h3>
+        <p class="text-sm text-gray-400 mb-2">June 2021 - Present</p>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Designed scalable ETL pipelines using Apache Spark and AWS Glue.</li>
+          <li>Optimized data storage and retrieval processes.</li>
         </ul>
       </div>
     </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero d-flex align-items-center justify-content-center text-center">
-    <div class="container">
-      <h1 class="display-4">Hi, I'm Arkar</h1>
-      <h2 class="lead">AI & Data Engineer | Problem Solver | Tech Enthusiast</h2>
-      <a href="#about-me" class="btn btn-primary btn-lg">Learn More</a>
-    </div>
   </section>
 
-  <!-- About Me Section -->
-  <section id="about-me" class="container my-5">
-    <div class="row align-items-center">
-      <div class="col-md-4">
-        <img src="../assets/images/profile.jpg" alt="Profile Picture" class="img-fluid rounded-circle shadow">
-      </div>
-      <div class="col-md-8">
-        <h2>About Me</h2>
-        <p>
-          I am an AI & Data Engineer with expertise in machine learning, big data, and cloud computing. I specialize in building intelligent systems that solve complex problems and derive valuable insights from data. With a strong foundation in both theoretical concepts and practical implementation, I strive to create scalable and efficient solutions.
-        </p>
-        <h3>Technical Skills</h3>
-        <div class="row">
-          <div class="col-md-6">
-            <ul>
-              <li>Python</li>
-              <li>TensorFlow / PyTorch</li>
-              <li>SQL / NoSQL</li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <ul>
-              <li>AWS / Cloud</li>
-              <li>Docker / Kubernetes</li>
-              <li>Apache Spark</li>
-            </ul>
-          </div>
-        </div>
-        <h3>Areas of Interest</h3>
-        <p>Machine Learning, Natural Language Processing, Computer Vision, Big Data Analytics</p>
-        <a href="../assets/files/cv.pdf" class="btn btn-secondary" download>Download CV</a>
+  <!-- Education -->
+  <section id="qualification" class="py-10 bg-gray-800">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-semibold mb-5 text-center">Education</h2>
+      <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">BSc in Computer Science</h3>
+        <p class="text-sm text-gray-400">National University of Singapore, 2021</p>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="container my-5">
-    <h2 class="text-center mb-4">My Projects</h2>
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <img src="../assets/images/project1.jpg" alt="Project 1" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Machine Learning Pipeline</h5>
-            <p class="card-text">
-              Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow for experiment tracking and model versioning.
-            </p>
-            <a href="https://github.com/your-repo-link" target="_blank" class="btn btn-primary">View Code</a>
-            <a href="https://demo-link.com" target="_blank" class="btn btn-outline-primary">Demo</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <img src="../assets/images/project2.jpg" alt="Project 2" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">ETL Pipeline with Airflow</h5>
-            <p class="card-text">
-              Developed a robust ETL pipeline using Apache Airflow for orchestrating data workflows and processing large datasets from multiple sources.
-            </p>
-            <a href="https://github.com/your-repo-link" target="_blank" class="btn btn-primary">View Code</a>
-            <a href="https://demo-link.com" target="_blank" class="btn btn-outline-primary">Demo</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="text-center mt-4">
-      <a href="#" class="btn btn-primary">View More Projects</a>
+  <!-- Contact -->
+  <section id="contact-me" class="py-10 bg-gray-900">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-semibold mb-5 text-center">Contact</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4">
+        <input type="text" name="name" placeholder="Your Name" class="w-full p-3 bg-gray-700 rounded">
+        <input type="email" name="email" placeholder="Your Email" class="w-full p-3 bg-gray-700 rounded">
+        <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-3 bg-gray-700 rounded"></textarea>
+        <button type="submit" class="w-full bg-blue-500 p-3 rounded hover:bg-blue-600 transition duration-300">Send</button>
+      </form>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="container my-5">
-    <h2 class="text-center mb-4">My Skills</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card text-center h-100">
-          <div class="card-body">
-            <h5 class="card-title">Python</h5>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card text-center h-100">
-          <div class="card-body">
-            <h5 class="card-title">TensorFlow / PyTorch</h5>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card text-center h-100">
-          <div class="card-body">
-            <h5 class="card-title">SQL / NoSQL</h5>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card text-center h-100">
-          <div class="card-body">
-            <h5 class="card-title">AWS / Cloud</h5>
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="container my-5">
-    <h2 class="text-center mb-4">Work Experience</h2>
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Data Engineer</h5>
-            <h6 class="card-subtitle mb-2 text-muted">TechCorp Inc.</h6>
-            <p class="card-text">June 2021 - Present</p>
-            <ul>
-              <li>Designed and implemented scalable ETL pipelines using Apache Spark and AWS Glue.</li>
-              <li>Optimized data storage and retrieval processes, reducing query times by 40%.</li>
-              <li>Developed automated data quality monitoring systems using Airflow and Python.</li>
-              <li>Led a team of 3 junior engineers in migrating on-premises data warehouse to cloud infrastructure.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">ML Engineer</h5>
-            <h6 class="card-subtitle mb-2 text-muted">AI Solutions Co.</h6>
-            <p class="card-text">January 2021 - May 2021</p>
-            <ul>
-              <li>Developed machine learning models for customer segmentation and churn prediction.</li>
-              <li>Implemented CI/CD pipeline for ML model deployment using GitHub Actions and AWS.</li>
-              <li>Collaborated with product team to integrate ML features into existing applications.</li>
-              <li>Created dashboards for monitoring model performance and business metrics.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Qualification Section -->
-  <section id="qualification" class="container my-5">
-    <h2 class="text-center mb-4">Qualifications</h2>
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Bachelor of Science in Computer Science</h5>
-            <h6 class="card-subtitle mb-2 text-muted">National University of Singapore</h6>
-            <p class="card-text">Graduated: May 2021 | GPA: 3.8/4.0</p>
-            <p>Coursework: Machine Learning, Artificial Intelligence, Data Structures & Algorithms, Database Systems, Computer Networks</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Certified Data Engineer</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Google Cloud Platform</h6>
-            <p class="card-text">Certified: January 2022</p>
-            <p>Comprehensive knowledge of designing, building, and maintaining data processing systems with a focus on security, reliability, fault-tolerance, scalability, and efficiency.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact-me" class="container my-5">
-    <h2 class="text-center mb-4">Contact Me</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST" class="row g-3">
-      <div class="col-md-6">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-      </div>
-      <div class="col-md-6">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required>
-      </div>
-      <div class="col-12">
-        <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-      </div>
-      <div class="col-12 text-center">
-        <button type="submit" class="btn btn-primary">Send</button>
-      </div>
-    </form>
-  </section>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JS -->
   <script src="scripts/main.js"></script>
 </body>
