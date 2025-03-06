@@ -1,315 +1,301 @@
-/* General Styles */
-body {
-  background-color: #1a202c;
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-h1, h2, h3, h4 {
-  font-weight: bold;
-  text-align: center; /* Main section headers remain centered */
+/* Full-Screen Scroll Effect */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  height: 100%;
 }
 
-p {
-  font-size: 1rem;
-  line-height: 1.8;
-  text-align: left; /* Paragraphs are left-aligned */
+body {
+  background-color: #0A0F1E; /* Darkest navy blue */
+  color: #B0BEC5; /* Soft cool gray text */
+  overflow-x: hidden;
 }
 
-a {
-  color: #3b82f6;
+/* Section Styling */
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+/* Section Backgrounds with Tech Gradients */
+.home { background: linear-gradient(135deg, #0A0F1E, #121826); }
+.about { background: linear-gradient(135deg, #121826, #1C2A40); }
+.projects { background: linear-gradient(135deg, #1C2A40, #28394D); }
+.experience { background: linear-gradient(135deg, #28394D, #1C2A40); }
+.education { background: linear-gradient(135deg, #1C2A40, #121826); }
+.contact { background: linear-gradient(135deg, #121826, #0A0F1E); }
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 15, 30, 0.9); /* Dark overlay */
+  padding: 15px 0;
+  text-align: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.navbar a {
+  color: #B0BEC5;
+  margin: 0 15px;
+  font-size: 18px;
   text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
-a:hover {
-  text-decoration: underline;
+.navbar a:hover {
+  color: #00ADB5; /* Electric cyan */
 }
 
-button {
-  background-color: #3b82f6;
-  border: none;
-  color: white;
+/* Section Titles */
+.section h1,
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ECEFF1; /* Near white text */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  color: rgba(176, 190, 197, 0.85); /* Soft muted gray */
+}
+
+/* Job & Education Cards */
+.job-card, .qualification-card {
+  background: rgba(28, 42, 64, 0.9); /* Dark semi-transparent */
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: left;
+  color: #B0BEC5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.job-card h3, .qualification-card h3 {
+  color: #16A085; /* Cyber teal */
+}
+
+.job-card ul, .qualification-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.job-card ul li, .qualification-card ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.job-card ul li::before, .qualification-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #8E44AD; /* Purple accent */
+}
+
+/* Project Cards */
+.project {
+  background: rgba(28, 42, 64, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  text-align: left;
+  color: #B0BEC5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project h3 {
+  color: #1ABC9C; /* Neon aqua */
+}
+
+.learn-more {
+  margin-top: 10px;
   padding: 10px 20px;
-  border-radius: 5px;
+  background: #16A085; /* Cyber teal */
+  color: #0A0F1E;
+  border: none;
   cursor: pointer;
+  border-radius: 5px;
   transition: background 0.3s ease;
 }
 
-button:hover {
-  background-color: #2563eb;
+.learn-more:hover {
+  background: #00ADB5; /* Electric cyan */
 }
 
-/* Navigation Bar */
-.custom-navbar {
-  background-color: #374151; /* Slightly lighter than the page background (#1a202c) */
-  border-radius: 30px;
-  padding: 10px 20px;
-  margin: 10px auto; /* Keeps it centered */
-  max-width: 800px;
-  display: flex;
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 15, 30, 0.9);
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  position: sticky; /* Ensures it stays at the top */
-  top: 10px; /* Keeps a small margin at the top */
-  z-index: 1000; /* Keeps it above other content */
 }
 
-.custom-navbar ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 0;
-  margin: 0;
-}
-
-@media (min-width: 768px) {
-  .custom-navbar ul {
-    flex-direction: row;
-    gap: 15px;
-  }
-}
-
-.custom-navbar a {
-  color: #cbd5e1; /* Light gray text for contrast */
-  font-weight: 500;
-  padding: 8px 15px;
-  border-radius: 20px;
-  transition: background 0.3s ease-in-out;
-}
-
-.custom-navbar a:hover,
-.custom-navbar a.active {
-  background-color: #3b82f6; /* Blue highlight for active/hover state */
-  color: white;
-}
-
-/* Sections */
-section {
-  padding: 5rem 1rem;
-}
-
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-align: center; /* Section headers remain centered */
-}
-
-@media (min-width: 768px) {
-  section h2 {
-    font-size: 2.5rem;
-  }
-}
-
-/* Hero & About Me Section */
-#hero-about {
-  padding-left: 0; /* No left padding */
-  padding-right: 0; /* No right padding */
-}
-
-#hero {
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-#hero h1 {
-  font-size: 2.5rem;
-}
-
-@media (min-width: 768px) {
-  #hero h1 {
-    font-size: 3rem;
-  }
-}
-
-#hero h2 {
-  font-size: 1.2rem;
-  color: #cbd5e1;
-}
-
-/* About Me */
-#about-me {
-  background-color: #2d3748;
-  padding: 2rem;
-  border-radius: 0; /* No rounded corners */
-}
-
-#about-me h2 {
-  margin-bottom: 1.5rem;
-  text-align: center; /* Section header remains centered */
-}
-
-#about-me p {
-  margin-bottom: 1rem;
-  text-align: left; /* Paragraphs aligned left */
-}
-
-#about-me ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-  text-align: left; /* List items aligned left */
-}
-
-/* Projects */
-#projects {
-  background-color: #1a202c;
-}
-
-#projects .project-card {
-  background-color: #2d3748;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
-}
-
-#projects .project-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  text-align: left; /* Project names aligned left */
-}
-
-#projects .project-card p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  text-align: left; /* Descriptions aligned left */
-}
-
-#projects .project-card a {
-  display: inline-block;
-  margin-top: 0.5rem;
-}
-
-/* Skills */
-#skills {
-  background-color: #2d3748;
-}
-
-#skills .skill-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  text-align: left; /* Skill names aligned left */
-}
-
-#skills .progress-bar {
-  width: 80%;
-  height: 0.5rem;
-  background-color: #4a5568;
-  border-radius: 9999px;
+.modal-content {
+  background: #1C2A40;
+  padding: 20px;
+  border-radius: 8px;
+  width: 60%;
+  max-width: 600px;
+  color: #ECEFF1;
   position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-#skills .progress-bar .progress {
-  height: 100%;
-  background-color: #3b82f6;
-  border-radius: 9999px;
+pre {
+  background: #28394D;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  color: #ECEFF1;
 }
 
-#skills .progress-bar .label {
+/* Close Button */
+.close {
   position: absolute;
-  top: -2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #2d3748;
-  padding: 0.25rem 0.5rem;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  text-align: center; /* Labels for progress bars remain centered */
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #8E44AD;
+  transition: color 0.3s ease;
 }
 
-/* Experience */
-#experience {
-  background-color: #1a202c;
+.close:hover {
+  color: #1ABC9C;
 }
 
-#experience .job-card {
-  background-color: #2d3748;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
-}
-
-#experience .job-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  text-align: left; /* Job titles aligned left */
-}
-
-#experience .job-card p {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  text-align: left; /* Descriptions aligned left */
-}
-
-#experience .job-card ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-  text-align: left; /* List items aligned left */
-}
-
-/* Qualifications */
-#qualification {
-  background-color: #2d3748;
-}
-
-#qualification .qualification-card {
-  background-color: #1a202c;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
-}
-
-#qualification .qualification-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  text-align: left; /* Qualification titles aligned left */
-}
-
-#qualification .qualification-card p {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  text-align: left; /* Descriptions aligned left */
-}
-
-/* Contact Form */
-#contact-me form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-#contact-me input,
-#contact-me textarea {
-  background-color: #2d3748;
+/* Form Styling */
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
   border: none;
-  padding: 1rem;
   border-radius: 5px;
-  color: white;
+  background: rgba(28, 42, 64, 0.8);
+  color: #ECEFF1;
 }
 
-#contact-me button {
-  margin-top: 1rem;
+form button {
+  background: #16A085;
+  color: #0A0F1E;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-  section {
-    padding: 6rem 2rem;
+form button:hover {
+  background: #00ADB5;
+}
+
+/* Certificates Section */
+.certificates-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.certificates-section h2 {
+  font-size: 2rem;
+  color: #ECEFF1; /* Near white */
+  margin-bottom: 20px;
+}
+
+/* Certificates Grid */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Certificate Card */
+.certificate-card {
+  background: rgba(28, 42, 64, 0.9); /* Dark semi-transparent */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  color: #B0BEC5;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.certificate-card h3 {
+  color: #1ABC9C; /* Neon aqua */
+  margin-bottom: 10px;
+}
+
+.certificate-card p {
+  font-size: 1rem;
+  color: rgba(176, 190, 197, 0.85);
+  margin-bottom: 10px;
+}
+
+/* View Code Button */
+.view-code {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #16A085; /* Cyber teal */
+  color: #0A0F1E;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.view-code:hover {
+  background: #00ADB5; /* Electric cyan */
+  color: #ECEFF1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section h1, .section h2 {
+    font-size: 2rem;
   }
 
-  #projects .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+  .section p {
+    font-size: 1rem;
+  }
+
+  .project, .job-card, .qualification-card {
+    width: 90%;
+  }
+  
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }

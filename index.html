@@ -3,140 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arkar Kyaw | AI & Data Engineer</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles/styles.css">
+  <title>Arkar | AI & Data Engineer</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-900 text-white">
-  <!-- Navigation -->
-  <nav class="custom-navbar">
-    <ul class="flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-center">
-      <li><a class="active" href="#hero-about">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#qualification">Education</a></li>
-      <li><a href="#contact-me">Contact</a></li>
-    </ul>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#qualification">Qualification</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Hero & About Me Section -->
-  <section id="hero-about" class="py-10">
-    <!-- Hero Section -->
-    <div id="hero" class="text-center py-10">
-      <h1 class="text-4xl md:text-5xl font-bold">Hi, I'm Arkar Kyaw</h1>
-      <h2 class="text-lg md:text-xl text-gray-400 mt-2">AI & Data Engineer | Problem Solver | Tech Enthusiast</h2>
+  <!-- Sections -->
+  <div id="home" class="section home">
+    <h1>Hi there, I'm Arkar</h1>
+    <h2>AI & Data Engineer | Tech Enthusiast</h2>
+  </div>
+
+  <div id="about" class="section about">
+    <h2>About Me</h2>
+    <p>
+      Recent AI & Data Engineer graduate with expertise and a strong interest in machine learning, deep learning, computer vision, natural language processing, cloud computing, big data, and data processing and analysis. I specialize in building data-driven intelligent systems that tackle complex problems and extract valuable insights from data.
+    </p>
+  </div>
+
+  <div id="projects" class="section projects">
+    <h2>Projects</h2>
+
+    <!-- Project 1 -->
+    <div class="project">
+      <h3>ML-Based Repeat Buyer Prediction</h3>
+      <p>Built a machine learning pipeline using RF and GBM models to predict repeat buyers in e-commerce.</p>
+      <button class="learn-more" data-modal="modal1">Learn More</button>
     </div>
-    <!-- About Me Section -->
-    <div id="about-me" class="py-10 bg-gray-800">
-      <div class="max-w-4xl mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center">About Me</h2>
-        <p class="text-lg leading-relaxed">
-          I am an AI & Data Engineer with expertise in machine learning, big data, and cloud computing. I specialize in building intelligent systems that solve complex problems and derive valuable insights from data.
-        </p>
-        <h3 class="mt-5 text-xl md:text-2xl font-semibold">Technical Skills</h3>
-        <ul class="list-disc list-inside space-y-2">
-          <li>Python, TensorFlow, PyTorch</li>
-          <li>SQL / NoSQL, Apache Spark</li>
-          <li>AWS / Cloud, Docker, Kubernetes</li>
-        </ul>
-        <h3 class="mt-5 text-xl md:text-2xl font-semibold">Areas of Interest</h3>
-        <p class="leading-relaxed">Machine Learning, NLP, Computer Vision, Big Data Analytics</p>
+
+    <!-- Project 2 -->
+    <div class="project">
+      <h3>Cloud-Based Dependency Injection</h3>
+      <p>Developed an NPM package for dependency injection, utilizing a cloud service across microservices.</p>
+      <button class="learn-more" data-modal="modal2">Learn More</button>
+    </div>
+  </div>
+
+<!-- Experience Section -->
+<div id="experience" class="section experience">
+    <h2>Work Experience</h2>
+    <div class="job-card">
+      <h3>Data Engineer, Developer - Monetary Authority of Singapore (MAS)</h3>
+      <p>September 2024 - February 2025</p>
+      <p>Confidentiality Notice: Due to confidentiality agreements, project details cannot be disclosed.</p>
+      <ul>
+        <li>Data cleaning and data mapping on CSV files using Excel and Python.</li>
+        <li>Migrated cleaned data from local CSV to AWS cloud using Python and AWS cloud services, now in production.</li>
+        <li>Developed a reusable Node.js NPM package for secure credential management and dependency injection via cloud, replacing CI/CD pipeline usage. Adopted by multiple microservices.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Qualification Section -->
+  <div id="qualification" class="section qualification">
+    <h2>Education</h2>
+    
+    <!-- Education Card -->
+    <div class="qualification-card">
+      <h3>Diploma in AI & Data Engineering</h3>
+      <p>Nanyang Polytechnic (NYP), 2022 - 2025</p>
+      <p>Core Modules:</p>
+      <ul>
+        <li>Machine Learning</li>
+        <li>Deep Learning</li>
+        <li>Computer Vision</li>
+        <li>Natural Language Processing</li>
+      </ul>
+    </div>
+  
+    <!-- Certificates Section -->
+    <div class="certificates-section">
+      <h2>Certificates</h2>
+      <div class="certificates-grid">
+        <!-- Certificate 1 -->
+        <div class="certificate-card">
+          <h3>CAIE</h3>
+          <p>Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow.</p>
+          <a href="https://github.com/your-repo-link" class="view-code">Link</a>
+        </div>
+  
+        <!-- Certificate 2 -->
+        <div class="certificate-card">
+          <h3>CAIE</h3>
+          <p>Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow.</p>
+          <a href="https://github.com/your-repo-link" class="view-code">Link</a>
+        </div>
+  
+        <!-- Certificate 3 -->
+        <div class="certificate-card">
+          <h3>Nvidia</h3>
+          <p>Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow.</p>
+          <a href="https://github.com/your-repo-link" class="view-code">Link</a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Projects -->
-  <section id="projects" class="py-10 bg-gray-900">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center">Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl md:text-2xl font-semibold mb-2">Machine Learning Pipeline</h3>
-          <p class="leading-relaxed">Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow.</p>
-          <a href="https://github.com/your-repo-link" class="text-blue-400 hover:text-blue-300 block mt-4">View Code</a>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl md:text-2xl font-semibold mb-2">ETL Pipeline with Airflow</h3>
-          <p class="leading-relaxed">Developed a robust ETL pipeline using Apache Airflow for orchestrating data workflows.</p>
-          <a href="https://github.com/your-repo-link" class="text-blue-400 hover:text-blue-300 block mt-4">View Code</a>
-        </div>
-      </div>
+  <div id="contact" class="section contact">
+    <h2>Contact</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- Modals -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>ML-Based Repeat Buyer Prediction</h2>
+      <p>Developed a pipeline using RF and GBM models, optimizing with hyperparameter tuning.</p>
+      <pre>
+# Sample Code
+from sklearn.ensemble import RandomForestClassifier
+model = RandomForestClassifier(n_estimators=100)
+      </pre>
     </div>
-  </section>
+  </div>
 
-  <!-- Skills -->
-  <section id="skills" class="py-10 bg-gray-800">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center">Skills</h2>
-      <div class="space-y-6">
-        <div class="flex items-center justify-between">
-          <span class="font-medium">Python</span>
-          <div class="w-4/5 h-2 bg-gray-700 rounded-full relative">
-            <div class="absolute left-0 top-0 h-full w-3/4 bg-green-500 rounded-full"></div>
-            <span class="absolute -top-4 right-1/2 transform translate-x-1/2 bg-gray-800 px-2 py-1 rounded text-xs">Intermediate</span>
-          </div>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="font-medium">TensorFlow / PyTorch</span>
-          <div class="w-4/5 h-2 bg-gray-700 rounded-full relative">
-            <div class="absolute left-0 top-0 h-full w-4/5 bg-yellow-500 rounded-full"></div>
-            <span class="absolute -top-4 right-1/3 transform translate-x-1/2 bg-gray-800 px-2 py-1 rounded text-xs">Advanced</span>
-          </div>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="font-medium">SQL / NoSQL</span>
-          <div class="w-4/5 h-2 bg-gray-700 rounded-full relative">
-            <div class="absolute left-0 top-0 h-full w-2/3 bg-red-500 rounded-full"></div>
-            <span class="absolute -top-4 right-1/4 transform translate-x-1/2 bg-gray-800 px-2 py-1 rounded text-xs">Beginner</span>
-          </div>
-        </div>
-      </div>
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Cloud-Based Dependency Injection</h2>
+      <p>Designed an NPM package to simplify dependency injection across microservices.</p>
+      <pre>
+# Sample Code
+const container = require('your-npm-package');
+container.register('Service', new YourService());
+      </pre>
     </div>
-  </section>
+  </div>
 
-  <!-- Experience -->
-  <section id="experience" class="py-10 bg-gray-900">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center">Work Experience</h2>
-      <div class="bg-gray-800 p-6 rounded-lg shadow-md">
-        <h3 class="text-xl md:text-2xl font-semibold mb-2">Data Engineer - TechCorp Inc.</h3>
-        <p class="text-sm md:text-base text-gray-400 mb-2">June 2021 - Present</p>
-        <ul class="list-disc list-inside space-y-2">
-          <li>Designed scalable ETL pipelines using Apache Spark and AWS Glue.</li>
-          <li>Optimized data storage and retrieval processes.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section id="qualification" class="py-10 bg-gray-800">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center">Education</h2>
-      <div class="bg-gray-900 p-6 rounded-lg shadow-md">
-        <h3 class="text-xl md:text-2xl font-semibold mb-2">BSc in Computer Science</h3>
-        <p class="text-sm md:text-base text-gray-400">National University of Singapore, 2021</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact-me" class="py-10 bg-gray-900">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-semibold mb-5 text-center">Contact</h2>
-      <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4">
-        <input type="text" name="name" placeholder="Your Name" class="w-full p-3 bg-gray-700 rounded">
-        <input type="email" name="email" placeholder="Your Email" class="w-full p-3 bg-gray-700 rounded">
-        <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-3 bg-gray-700 rounded"></textarea>
-        <button type="submit" class="w-full bg-blue-500 p-3 rounded hover:bg-blue-600 transition duration-300">Send</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Custom JS -->
   <script src="scripts/main.js"></script>
 </body>
 </html>
