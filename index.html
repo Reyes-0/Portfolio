@@ -5,56 +5,203 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arkar | AI & Data Engineer</title>
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <a href="#home">Home</a>
-    <a href="#about">About Me</a>
     <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#qualification">Qualification</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Sections -->
+  <!-- Home Sections -->
   <div id="home" class="section home">
     <h1>Hi there, I'm Arkar</h1>
     <h2>AI & Data Engineer | Tech Enthusiast</h2>
-  </div>
+    
+    <!-- About Me Card -->
+    <div class="about-card">
+      <p>
+        Recent AI & Data Engineer graduate with expertise and a strong interest in machine learning, deep learning, computer vision, natural language processing, cloud computing, big data, and data processing and analysis. I specialize in building data-driven intelligent systems that tackle complex problems and extract valuable insights from data.
+      </p>
+    </div>
 
-  <div id="about" class="section about">
-    <h2>About Me</h2>
-    <p>
-      Recent AI & Data Engineer graduate with expertise and a strong interest in machine learning, deep learning, computer vision, natural language processing, cloud computing, big data, and data processing and analysis. I specialize in building data-driven intelligent systems that tackle complex problems and extract valuable insights from data.
-    </p>
+    <!-- Social Media Links (Text + Logos) -->
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/arkar-kyaw-220a202aa" target="_blank">
+        LinkedIn <i class="fab devicon-linkedin-plain"></i> <!-- LinkedIn Logo -->
+      </a>
+      <a href="https://github.com/Reyes-0" target="_blank">
+        GitHub <i class="fab devicon-github-original"></i> <!-- GitHub Logo -->
+      </a>
+    </div>
   </div>
 
   <div id="projects" class="section projects">
     <h2>Projects</h2>
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project">
+        <h3>AI Football Commentary</h3>
+        <p>AI-powered FIFA match commentary system. Leveraged YOLOv8 for video annotation, GPT-4 Vision for generating event-based commentary, and TTS-1 for audio conversion. Built a Flask web app with threading for real-time playback and deployed using ngrok.</p>
+        <div class="button-group">
+          <button class="learn-more" data-modal="modal1">Learn More</button>
+          <a href="https://github.com/yourusername/your-repo" target="_blank" class="github-repo">GitHub</a>
+        </div>
+      </div>
 
-    <!-- Project 1 -->
-    <div class="project">
-      <h3>ML-Based Repeat Buyer Prediction</h3>
-      <p>Built a machine learning pipeline using RF and GBM models to predict repeat buyers in e-commerce.</p>
-      <button class="learn-more" data-modal="modal1">Learn More</button>
-    </div>
+      <!-- Project 2 -->
+      <div class="project">
+        <h3>Elderly Dementia Wandering Prevention System</h3>
+        <p>AI Detection and Alert System for dementia patients. Developed a custom object detection model using Azure Cognitive Services and Azure Blob Storage to store real-time detected images. Sends alerts with images to caregivers via Sinch API.</p>
+        <div class="button-group">
+          <button class="learn-more" data-modal="modal2">Learn More</button>
+          <a href="https://github.com/yourusername/your-repo" target="_blank" class="github-repo">GitHub</a>
+        </div>
+      </div>
 
-    <!-- Project 2 -->
-    <div class="project">
-      <h3>Cloud-Based Dependency Injection</h3>
-      <p>Developed an NPM package for dependency injection, utilizing a cloud service across microservices.</p>
-      <button class="learn-more" data-modal="modal2">Learn More</button>
+      <!-- Project 3 -->
+      <div class="project">
+        <h3>NLP</h3>
+        <p>Built a machine learning pipeline using RF and GBM models to predict repeat buyers in e-commerce.</p>
+        <div class="button-group">
+          <button class="learn-more" data-modal="modal3">Learn More</button>
+          <a href="https://github.com/yourusername/your-repo" target="_blank" class="github-repo">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project">
+        <h3>Mushroom</h3>
+        <p>Developed an NPM package for dependency injection, utilizing a cloud service across microservices.</p>
+        <div class="button-group">
+          <button class="learn-more" data-modal="modal4">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project">
+        <h3>IOT</h3>
+        <p>Built a machine learning pipeline using RF and GBM models to predict repeat buyers in e-commerce.</p>
+        <div class="button-group">
+          <button class="learn-more" data-modal="modal5">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project">
+        <h3>ML-Based Repeat Buyer Prediction</h3>
+        <p>Built a machine learning pipeline using RF and GBM models to predict repeat buyers in e-commerce.</p>
+        <div class="button-group">
+          <button class="learn-more" data-modal="modal6">Learn More</button>
+        </div>
+      </div>
     </div>
   </div>
 
-<!-- Experience Section -->
-<div id="experience" class="section experience">
+<!-- Skill Section -->
+<div id="skills" class="section skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <!-- Skill 1 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Logo" class="skill-logo">
+      <h3>Python</h3>
+    </div>
+
+    <!-- Skill 2 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="SQL Logo" class="skill-logo">
+      <h3>C++</h3>
+    </div>
+
+    <!-- Skill 2 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="SQL Logo" class="skill-logo">
+      <h3>C#</h3>
+    </div>
+
+    <!-- Skill 2 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="SQL Logo" class="skill-logo">
+      <h3>HTML</h3>
+    </div>
+
+    <!-- Skill 2 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="SQL Logo" class="skill-logo">
+      <h3>CSS</h3>
+    </div>
+
+    <!-- Skill 2 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="SQL Logo" class="skill-logo">
+      <h3>JavaScript</h3>
+    </div>
+
+    <!-- Skill 8 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS Logo" class="skill-logo">
+      <h3>AWS</h3>
+    </div>
+
+    <!-- Skill 9 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure Logo" class="skill-logo">
+      <h3>Azure</h3>
+    </div>
+    
+    <!-- Skill 2 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="SQL Logo" class="skill-logo">
+      <h3>MySQL</h3>
+    </div>
+
+    <!-- Skill 11 -->
+    <div class="skill-card">
+      <img src="https://img.icons8.com/color/48/power-bi-2021.png" alt="Power BI Logo" class="skill-logo">
+      <h3>Power BI</h3>
+    </div>
+
+    <!-- Skill 3 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas Logo" class="skill-logo">
+      <h3>Pandas</h3>
+    </div>
+
+    <!-- Skill 4 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="Numpy Logo" class="skill-logo">
+      <h3>Numpy</h3>
+    </div>
+
+    <!-- Skill 5 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/plotly/plotly-original.svg" alt="Plotly Logo" class="skill-logo">
+      <h3>Plotly</h3>
+    </div>
+
+    <!-- Skill 7 -->
+    <div class="skill-card">
+      <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn Logo" class="skill-logo seaborn-logo">
+      <h3>Seaborn</h3>
+    </div>
+  </div>
+</div>
+
+  <!-- Experience Section -->
+  <div id="experience" class="section experience">
     <h2>Work Experience</h2>
     <div class="job-card">
-      <h3>Data Engineer, Developer - Monetary Authority of Singapore (MAS)</h3>
-      <p>September 2024 - February 2025</p>
-      <p>Confidentiality Notice: Due to confidentiality agreements, project details cannot be disclosed.</p>
+      <h3>Data Engineer, Developer Intern</h3>
+      <p>Monetary Authority of Singapore (MAS)</p>
+      <p>(September 2024 - February 2025)</p>
+      <p>Confidentiality Notice: Due to confidentiality agreements, 
+        project details cannot be disclosed.</p>
       <ul>
         <li>Data cleaning and data mapping on CSV files using Excel and Python.</li>
         <li>Migrated cleaned data from local CSV to AWS cloud using Python and AWS cloud services, now in production.</li>
@@ -62,12 +209,10 @@
       </ul>
     </div>
   </div>
-  
+
   <!-- Qualification Section -->
   <div id="qualification" class="section qualification">
     <h2>Education</h2>
-    
-    <!-- Education Card -->
     <div class="qualification-card">
       <h3>Diploma in AI & Data Engineering</h3>
       <p>Nanyang Polytechnic (NYP), 2022 - 2025</p>
@@ -79,35 +224,36 @@
         <li>Natural Language Processing</li>
       </ul>
     </div>
-  
+
     <!-- Certificates Section -->
     <div class="certificates-section">
       <h2>Certificates</h2>
       <div class="certificates-grid">
         <!-- Certificate 1 -->
         <div class="certificate-card">
-          <h3>CAIE</h3>
+          <h3>Associate AI Engineer by AI Professionals Association</h3>
           <p>Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow.</p>
-          <a href="https://github.com/your-repo-link" class="view-code">Link</a>
+          <a href="https://www.aip.org.sg/certificate-verification/3031D4C-3031D48-7DDDC/" class="view-code">Link</a>
         </div>
-  
+
         <!-- Certificate 2 -->
         <div class="certificate-card">
-          <h3>CAIE</h3>
+          <h3>Azure AI Fundamentals by Microsoft</h3>
           <p>Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow.</p>
-          <a href="https://github.com/your-repo-link" class="view-code">Link</a>
+          <a href="https://www.credly.com/badges/04b482fc-d72d-4528-ac54-b4a8eb20edb6/public_url" class="view-code" target="_blank">Link</a>
         </div>
-  
+
         <!-- Certificate 3 -->
         <div class="certificate-card">
-          <h3>Nvidia</h3>
+          <h3>NVIDIA DLI Certificate – Fundamentals of Deep Learning</h3>
           <p>Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow.</p>
-          <a href="https://github.com/your-repo-link" class="view-code">Link</a>
+          <a href="https://learn.nvidia.com/certificates?id=c19f81ae9a1e4d51ae6d358cb0db52b9" class="view-code" target="_blank">Link</a>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Contact Section -->
   <div id="contact" class="section contact">
     <h2>Contact</h2>
     <form id="contact-form">
