@@ -6,6 +6,9 @@
   <title>Arkar | AI & Data Engineer</title>
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 </head>
 <body>
   <!-- Navbar -->
@@ -44,39 +47,104 @@
   <div id="projects" class="section projects">
     <h2>Projects</h2>
     <div class="projects-grid">
-      <!-- Project 1 -->
-      <div class="project">
-        <h3>AI Football Commentary</h3>
-        <p>AI-powered FIFA match commentary system. Leveraged YOLOv8 for video annotation, GPT-4 Vision for generating event-based commentary, and TTS-1 for audio conversion. Built a Flask web app with threading for real-time playback and deployed using ngrok.</p>
-        <div class="button-group">
-          <button class="learn-more" data-modal="modal1">Learn More</button>
-          <a href="https://github.com/yourusername/your-repo" target="_blank" class="github-repo">GitHub</a>
-        </div>
+  <!-- Project 1 -->
+  <div class="project">
+    <h3>AI Football Commentary</h3>
+    <div class="tech-icons">
+      <div class="tech-icon-container">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Logo" class="skill-logo">
       </div>
+      <div class="tech-icon-container">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV Logo" class="skill-logo">
+      </div>
+      <div class="tech-icon-container">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" alt="Flask Logo" class="skill-logo">
+      </div>
+      <div class="tech-icon-container">
+        <img src="https://img.icons8.com/ios-glyphs/30/10A37F/chatgpt.png" alt="openai" class="skill-logo"/>
+      </div>
+    </div>
+    <p>AI-powered FIFA match commentary system. Leveraged <strong><i>YOLOv8</i></strong> for video annotation, 
+      <strong><i>GPT-4 Vision</i></strong> for generating event-based commentary, 
+      and <strong><i>TTS-1</i></strong> for audio conversion. Built a <strong><i>Flask</i></strong> web app with threading for real-time 
+      playback and deployed using <strong><i>Ngrok</i></strong>.</p>
+    <div class="button-group">
+      <button class="learn-more" data-modal="modal1">Learn More</button>
+      <a href="https://github.com/Reyes-0/AI-FIFA-Commentator" target="_blank" class="github-repo">GitHub</a>
+    </div>
+  </div>
 
       <!-- Project 2 -->
       <div class="project">
-        <h3>Elderly Dementia Wandering Prevention System</h3>
-        <p>AI Detection and Alert System for dementia patients. Developed a custom object detection model using Azure Cognitive Services and Azure Blob Storage to store real-time detected images. Sends alerts with images to caregivers via Sinch API.</p>
+        <h3>Dementia Wandering Prevention System</h3>
+        <div class="tech-icons">
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://img.icons8.com/wired/64/FFFFFF/sms.png" alt="sms" class="skill-logo"/>
+          </div>
+        </div>
+        <p>AI Detection and Alert System for dementia patients. Developed a <strong><i>custom object detection model</i></strong>
+           using <strong><i>Azure Cognitive Services</i></strong> and <strong><i>Azure Blob Storage</i></strong>
+            to store real-time detected images. Sends alerts with images to caregivers via <strong><i>Sinch SMS API</i></strong>.</p>
         <div class="button-group">
           <button class="learn-more" data-modal="modal2">Learn More</button>
-          <a href="https://github.com/yourusername/your-repo" target="_blank" class="github-repo">GitHub</a>
+          <a href="https://github.com/Reyes-0/CV-DementiaCare-Alert" target="_blank" class="github-repo">GitHub</a>
         </div>
       </div>
 
       <!-- Project 3 -->
       <div class="project">
-        <h3>NLP</h3>
+        <h3>K8s</h3>
+        <div class="tech-icons">
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow Logo" class="skill-logo"/>
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://img.icons8.com/fluency/50/docker.png" alt="docker" class="skill-logo"/>
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://img.icons8.com/color/48/kubernetes.png" alt="kubernetes" class="skill-logo"/>
+          </div>
+        </div>
         <p>Built a machine learning pipeline using RF and GBM models to predict repeat buyers in e-commerce.</p>
+        <!-- <p>Tech Stack: CNN, Model, TensorFlow, Keras</p> -->
         <div class="button-group">
           <button class="learn-more" data-modal="modal3">Learn More</button>
-          <a href="https://github.com/yourusername/your-repo" target="_blank" class="github-repo">GitHub</a>
+          <a href="https://github.com/Reyes-0/k8s_CV/tree/main" target="_blank" class="github-repo">GitHub</a>
         </div>
       </div>
 
       <!-- Project 4 -->
       <div class="project">
-        <h3>Mushroom</h3>
+        <h3>NLP</h3>
+        <div class="tech-icons">
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" alt="Flask Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://img.icons8.com/fluency/50/docker.png" alt="docker" class="skill-logo"/>
+          </div>
+        </div>
         <p>Developed an NPM package for dependency injection, utilizing a cloud service across microservices.</p>
         <div class="button-group">
           <button class="learn-more" data-modal="modal4">Learn More</button>
@@ -85,7 +153,21 @@
 
       <!-- Project 5 -->
       <div class="project">
-        <h3>IOT</h3>
+        <h3>ML-Based Repeat Buyer Prediction</h3>
+        <div class="tech-icons">
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" alt="Flask Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://img.icons8.com/ios-glyphs/30/chatgpt.png" alt="openai" class="skill-logo"/>
+          </div>
+        </div>
         <p>Built a machine learning pipeline using RF and GBM models to predict repeat buyers in e-commerce.</p>
         <div class="button-group">
           <button class="learn-more" data-modal="modal5">Learn More</button>
@@ -94,7 +176,21 @@
 
       <!-- Project 6 -->
       <div class="project">
-        <h3>ML-Based Repeat Buyer Prediction</h3>
+        <h3>IoT</h3>
+        <div class="tech-icons">
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" alt="Flask Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://img.icons8.com/ios-glyphs/30/chatgpt.png" alt="openai" class="skill-logo"/>
+          </div>
+        </div>
         <p>Built a machine learning pipeline using RF and GBM models to predict repeat buyers in e-commerce.</p>
         <div class="button-group">
           <button class="learn-more" data-modal="modal6">Learn More</button>
@@ -103,58 +199,24 @@
 
       <!-- Project 1 -->
       <div class="project">
-        <h3>AI Football Commentary</h3>
+        <h3>Mushroom</h3>
+        <div class="tech-icons">
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" alt="Flask Logo" class="skill-logo">
+          </div>
+          <div class="tech-icon-container">
+            <img src="https://img.icons8.com/ios-glyphs/30/chatgpt.png" alt="openai" class="skill-logo"/>
+          </div>
+        </div>
         <p>AI-powered FIFA match commentary system. Leveraged YOLOv8 for video annotation, GPT-4 Vision for generating event-based commentary, and TTS-1 for audio conversion. Built a Flask web app with threading for real-time playback and deployed using ngrok.</p>
         <div class="button-group">
           <button class="learn-more" data-modal="modal1">Learn More</button>
-          <a href="https://github.com/yourusername/your-repo" target="_blank" class="github-repo">GitHub</a>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project">
-        <h3>Elderly Dementia Wandering Prevention System</h3>
-        <p>AI Detection and Alert System for dementia patients. Developed a custom object detection model using Azure Cognitive Services and Azure Blob Storage to store real-time detected images. Sends alerts with images to caregivers via Sinch API.</p>
-        <div class="button-group">
-          <button class="learn-more" data-modal="modal2">Learn More</button>
-          <a href="https://github.com/yourusername/your-repo" target="_blank" class="github-repo">GitHub</a>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project">
-        <h3>NLP</h3>
-        <p>Built a machine learning pipeline using RF and GBM models to predict repeat buyers in e-commerce.</p>
-        <div class="button-group">
-          <button class="learn-more" data-modal="modal3">Learn More</button>
-          <a href="https://github.com/yourusername/your-repo" target="_blank" class="github-repo">GitHub</a>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project">
-        <h3>Mushroom</h3>
-        <p>Developed an NPM package for dependency injection, utilizing a cloud service across microservices.</p>
-        <div class="button-group">
-          <button class="learn-more" data-modal="modal4">Learn More</button>
-        </div>
-      </div>
-
-      <!-- Project 5 -->
-      <div class="project">
-        <h3>IOT</h3>
-        <p>Built a machine learning pipeline using RF and GBM models to predict repeat buyers in e-commerce.</p>
-        <div class="button-group">
-          <button class="learn-more" data-modal="modal5">Learn More</button>
-        </div>
-      </div>
-
-      <!-- Project 6 -->
-      <div class="project">
-        <h3>ML-Based Repeat Buyer Prediction</h3>
-        <p>Built a machine learning pipeline using RF and GBM models to predict repeat buyers in e-commerce.</p>
-        <div class="button-group">
-          <button class="learn-more" data-modal="modal6">Learn More</button>
         </div>
       </div>
     </div>
@@ -247,6 +309,18 @@
       <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn Logo" class="skill-logo seaborn-logo">
       <h3>Seaborn</h3>
     </div>
+
+    <!-- Skill 7 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow Logo" class="skill-logo">
+      <h3>TensorFlow</h3>
+    </div>
+
+    <!-- Skill 7 -->
+    <div class="skill-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV Logo" class="skill-logo">
+      <h3>OpenCV</h3>
+    </div>
   </div>
 </div>
 
@@ -255,8 +329,25 @@
     <h2>Work Experience</h2>
     <div class="job-card">
       <h3>Data Engineer, Developer Intern</h3>
-      <p>Monetary Authority of Singapore (MAS)</p>
+      <p style="color: #00CED1;">Monetary Authority of Singapore (MAS)</p>
       <p>(September 2024 - February 2025)</p>
+      <div class="tech-icons">
+        <div class="tech-icon-container">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Logo" class="skill-logo">
+        </div>
+        <div class="tech-icon-container">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain-wordmark.svg" />
+       </div>
+       <div class="tech-icon-container">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="SQL Logo" class="skill-logo">
+      </div>
+      <div class="tech-icon-container">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="SQL Logo" class="skill-logo">
+      </div>
+      <div class="tech-icon-container">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS Logo" class="skill-logo">
+      </div>
+      </div>
       <p>Confidentiality Notice: Due to confidentiality agreements, 
         project details cannot be disclosed.</p>
       <ul>
@@ -281,50 +372,138 @@
       <div class="certificates-grid">
         <!-- Certificate 1 -->
         <div class="certificate-card">
-          <h3>Associate AI Engineer by AI Professionals Association</h3>
-          <p>Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow.</p>
-          <a href="https://www.aip.org.sg/certificate-verification/3031D4C-3031D48-7DDDC/" class="view-code">Link</a>
+          <h3>Associate AI Engineer</h3>
+          <h4>From: AI Professionals Association</h4>
+          <a href="https://www.aip.org.sg/certificate-verification/3031D4C-3031D48-7DDDC/" class="view-code">View Certificate</a>
         </div>
 
         <!-- Certificate 2 -->
         <div class="certificate-card">
-          <h3>Azure AI Fundamentals by Microsoft</h3>
-          <p>Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow.</p>
-          <a href="https://www.credly.com/badges/04b482fc-d72d-4528-ac54-b4a8eb20edb6/public_url" class="view-code" target="_blank">Link</a>
+          <h3>Azure AI Fundamentals</h3>
+          <h4>From: Microsoft</h4>
+          <a href="https://www.credly.com/badges/04b482fc-d72d-4528-ac54-b4a8eb20edb6/public_url" class="view-code" target="_blank">View Certificate</a>
         </div>
 
         <!-- Certificate 3 -->
         <div class="certificate-card">
-          <h3>NVIDIA DLI Certificate – Fundamentals of Deep Learning</h3>
-          <p>Built an end-to-end ML pipeline for predictive analytics using Scikit-learn, Pandas, and MLflow.</p>
-          <a href="https://learn.nvidia.com/certificates?id=c19f81ae9a1e4d51ae6d358cb0db52b9" class="view-code" target="_blank">Link</a>
+          <h3>Fundamentals of Deep Learning</h3>
+          <h4>From: NVIDIA</h4>
+          <a href="https://learn.nvidia.com/certificates?id=c19f81ae9a1e4d51ae6d358cb0db52b9" class="view-code" target="_blank">View Certificate</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Contact Section -->
-  <div id="contact" class="section contact">
-    <h2>Contact</h2>
-    <form id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
+<!-- Contact Section -->
+<div id="contact" class="section contact">
+  <h2>Contact</h2>
+  <form id="custom-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdabOoukpL3ONlZQNKw7hBBYMFDw8RRxm6wTfH5MjTk3anuSw/formResponse" method="POST">
+    <!-- Name Field -->
+    <input type="text" id="name" name="entry.1451674361" placeholder="Your Name" required />
+  
+    <!-- Email Field -->
+    <input type="email" id="email" name="entry.1568809211" placeholder="Your Email" required />
+  
+    <!-- Message Field -->
+    <textarea id="message" name="entry.1770796330" rows="5" placeholder="Your Message"></textarea>
+  
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+  </form>
+  
+  <!-- Popup Acknowledgment -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <span class="close-popup">&times;</span>
+      <p>Thank you for your message! I will get back to you soon.</p>
+    </div>
   </div>
+</div>
 
   <!-- Modals -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>ML-Based Repeat Buyer Prediction</h2>
-      <p>Developed a pipeline using RF and GBM models, optimizing with hyperparameter tuning.</p>
-      <pre>
-# Sample Code
-from sklearn.ensemble import RandomForestClassifier
-model = RandomForestClassifier(n_estimators=100)
-      </pre>
+      <h2>AI Football Commentary</h2>
+    <p><strong>Number of classes:</strong> 35, which includes all the aspects of a football game.</p>
+    <p>The link to the dataset can be found in <a href="https://roboflow.com" target="_blank">Roboflow</a>. The model was trained on over <strong>6000 images</strong>.</p>
+    <p>The dataset is <strong>self-created and self-annotated</strong> because the quality of open-source data was extremely poor.</p>
+    <p>We used <strong>YOLOv8</strong> for raw video annotation to make it easier for <strong>GPT-4 Vision</strong> to commentate on the video with the help of the annotations from YOLOv8, providing rich context for the video.</p>
+    <p>YOLOv8 was trained on <strong>35 classes</strong>, and the results are impressive. The model's <strong>mAP performance is 86.8%</strong>, with a <strong>precision of 85.7%</strong> and a <strong>recall of 82.9%</strong>, which is excellent for a 35-class model. At the time, there were no other models that performed as well as ours. It's unclear if such models exist now.</p>
+      
+
+      <div class="image-grid">
+        <div class="image-item">
+          <img src="assets\images\FIFA.drawio.png" alt="Image 1" class="grid-image">
+          <p class="image-caption">Model Architecture</p>
+        </div>
+        <div class="image-item">
+          <img src="assets\images\FIFA.drawio.png" alt="Image 2" class="grid-image">
+          <p class="image-caption">Roboflow</p>
+        </div>
+        <div class="image-item">
+          <img src="assets\images\FIFA.drawio.png" alt="Image 3" class="grid-image">
+          <p class="image-caption">YOLOv8 results 35 classes</p>
+        </div>
+        <div class="image-item">
+          <img src="assets\images\FIFA.drawio.png" alt="Image 4" class="grid-image">
+          <p class="image-caption">End product</p>
+        </div>
+      </div>
+
+          <!-- Expanded Image Overlay -->
+      <div id="expanded-image-overlay" class="expanded-image-overlay">
+        <span class="close-expanded-image">&times;</span>
+        <img id="expanded-image" class="expanded-image" src="" alt="Expanded Image">
+      </div>
+
+      <div class="snippet-container">
+        <div class="snippet-header">
+            <div class="dots">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('python')">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"> Python
+                </div>
+                <div class="tab" onclick="showTab('javascript')">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"> JavaScript
+                </div>
+                <div class="tab" onclick="showTab('html')">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"> HTML
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Snippets -->
+        <div class="code-content">
+            <pre><code class="language-python" id="python">
+# Python Example
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))
+            </code></pre>
+
+            <pre style="display: none;"><code class="language-javascript" id="javascript">
+// JavaScript Example
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+console.log(greet("World"));
+            </code></pre>
+
+            <pre style="display: none;"><code class="language-html" id="html">
+<!-- HTML Example -->
+&lt;h1&gt;Hello, World!&lt;/h1&gt;
+            </code></pre>
+        </div>
+    </div>
+    <!-- <span class="close-popup">&times;</span> -->
+    <button class="close-popup">Close</button>
+    <a href="https://github.com/Reyes-0/AI-FIFA-Commentator" target="_blank" class="github-repo">GitHub</a>
     </div>
   </div>
 
@@ -340,7 +519,6 @@ container.register('Service', new YourService());
       </pre>
     </div>
   </div>
-
   <script src="scripts/main.js"></script>
 </body>
-</html>
+</html> 

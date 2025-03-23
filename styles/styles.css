@@ -83,6 +83,7 @@ body.overflow-hidden {
   background: #00CED1;
   color: #0A0F1E;
   transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .fab {
@@ -96,7 +97,6 @@ body.overflow-hidden {
   left: 50%;
   transform: translateX(-50%);
   background: rgba(10, 15, 30, 0.95);
-  padding: 12px 20px; /* Adjusted padding for better spacing */
   border-radius: 20px;
   border: 2px solid #00CED1;
   z-index: 1000;
@@ -106,10 +106,11 @@ body.overflow-hidden {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   justify-content: center;
   align-items: center;
-  max-width: 80%; /* Ensures the navbar doesn't exceed 80% of the screen width */
   width: fit-content; /* Allows the navbar to shrink if content is smaller */
   flex-wrap: nowrap; /* Prevents links from wrapping to the next line */
   white-space: nowrap; /* Ensures text doesn't wrap */
+  max-width: 80%; 
+  padding: 10px 12px;
 }
 
 .navbar a {
@@ -126,6 +127,7 @@ body.overflow-hidden {
   background: #00CED1;
   color: #0A0F1E;
   transform: scale(1.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 /* Active Navbar Link */
@@ -265,33 +267,38 @@ body.overflow-hidden {
 .job-card ul li,
 .qualification-card ul li {
   position: relative;
-  padding-left: 20px;
-  margin-bottom: 10px;
+  padding-left: 20px; /* Space for the bullet */
+  margin-bottom: 10px; /* Spacing between list items */
+  list-style-type: none; /* Remove default list styling */
 }
 
 .job-card ul li::before,
 .qualification-card ul li::before {
   content: "•";
-  position: absolute;
-  left: 0;
-  color: #8E44AD;
+  position: absolute; /* Position the bullet absolutely */
+  left: 0; /* Align the bullet to the left edge of the li */
+  color: #6C7A89;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 0.7; /* Adjust line height to align with text */
 }
 
 /* Projects Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  justify-content: center;
-  align-items: stretch;
-  width: 90%;
-  max-width: 1200px;
-  /* padding: 20px 0; */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Flexible grid with a minimum width of 280px */
+  gap: 20px; /* Space between grid items */
+  justify-content: center; /* Center the grid horizontally */
+  align-items: stretch; /* Ensure all items stretch to the same height */
+  width: 90%; /* Limit the width to 90% of the parent container */
+  max-width: 1200px; /* Maximum width for the grid */
+  margin: 0 auto; /* Center the grid */
+  padding: 20px 0; /* Add padding above and below the grid */
 }
 
 .project {
   background: rgba(28, 42, 64, 0.9);
-  padding: 20px;
+  padding: 1.5rem;
   border-radius: 10px;
   text-align: left;
   color: #E0E7EC;
@@ -305,18 +312,70 @@ body.overflow-hidden {
 
 .project h3 {
   color: #00CED1;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  min-height: 2.5rem;
+}
+
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap; /* Allow icons to wrap to the next line */
+  gap: 0.8rem; /* Space between icons */
+  justify-content: flex-start; /* Center icons horizontally */
+  align-items: center; /* Center icons vertically */
+  margin-bottom: 1rem; /* Space below the icons */
+}
+
+.tech-icons img,
+.tech-icons svg {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0;
+}
+
+.tech-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28, 42, 64, 0.9);
+  padding: 0.5rem; /* Reduced padding for smaller screens */
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 45px; /* Fixed width */
+  height: 45px; /* Fixed height */
+  flex-shrink: 0; /* Prevent icons from shrinking */
+}
+
+.tech-icon-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.tech-icon-container img {
+  width: 30px;
+  height: 30px;
 }
 
 .project p {
   font-size: 1rem;
   line-height: 1.5;
   color: #E0E7EC;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: auto;
 }
 
 .learn-more {
-  padding: 10px 20px;
+  display: inline-flex; /* Ensures flex properties apply */
+  align-items: center; /* Centers text vertically */
+  justify-content: center; /* Centers text horizontally */
+  text-align: center; /* Ensures text alignment */
+  padding: 10px 10px;
   background: #00CED1;
   color: #021519;
   border: none;
@@ -330,22 +389,21 @@ body.overflow-hidden {
 .learn-more:hover {
   background: #00B4B4;
   color: #ffffff;
-}
-
-.button-group {
-  display: flex;
-  gap: 10px;
-  margin-top: auto;
+  transform: scale(1.05); /* Slight scaling effect for emphasis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .github-repo {
-  padding: 10px 20px;
-  background: #333;
-  color: #E0E7EC;
+  display: inline-flex; /* Ensures flex properties apply */
+  align-items: center; /* Centers text vertically */
+  justify-content: center; /* Centers text horizontally */
+  text-align: center; /* Ensures text alignment */
+  padding: 0.8rem 1.5rem;
+  background: #333; /* Dark background */
+  color: #E0E7EC; /* Light text color */
   text-decoration: none;
   border-radius: 5px;
-  text-align: center;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
   font-size: 1rem;
   border: none;
   cursor: pointer;
@@ -353,9 +411,11 @@ body.overflow-hidden {
 }
 
 .github-repo:hover {
-  background: #444;
+  background: #24292e; /* GitHub's primary brand color */
+  color: #ffffff; /* Bright white text for contrast */
+  transform: scale(1.05); /* Slight scaling effect for emphasis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
-
 /* Modal */
 .modal {
   display: none;
@@ -368,26 +428,63 @@ body.overflow-hidden {
   background-color: rgba(10, 15, 30, 0.9);
   justify-content: center;
   align-items: center;
+  overflow: auto; /* Enable scrolling for the entire modal */
 }
 
 .modal-content {
   background: #1C2A40;
   padding: 20px;
   border-radius: 8px;
-  width: 90%;
-  max-width: 600px;
+  width: 60%; /* 60% of the screen width */
+  max-height: 80vh; /* 80% of the viewport height */
+  overflow-y: auto; /* Enable vertical scrolling */
   color: #E0E7EC;
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  margin: 20px; /* Add margin to prevent content from touching edges */
 }
 
-pre {
-  background: #28394D;
-  padding: 10px;
-  border-radius: 5px;
-  overflow-x: auto;
-  font-size: 0.9rem;
+/* Ensure the modal content doesn't overflow horizontally */
+.modal-content {
+  overflow-x: hidden;
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  color: #00CED1;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.6;
   color: #E0E7EC;
+  margin-bottom: 15px;
+  /* text-align: justify; */
+}
+
+.modal-content p strong {
+  color: #00CED1;
+  font-weight: bold;
+}
+
+.modal-content p em {
+  font-style: italic;
+  color: #E0E7EC;
+}
+
+.modal-content p a {
+  color: #00CED1;
+  text-decoration: none;
+  border-bottom: 1px dashed #00CED1;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.modal-content p a:hover {
+  color: #00B4B4;
+  border-bottom: 1px solid #00B4B4;
 }
 
 .close {
@@ -401,6 +498,160 @@ pre {
 }
 
 .close:hover {
+  color: #00CED1;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.snippet-container {
+  background: #282c34;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+  width: 100%;
+  margin-top: 20px;
+}
+
+.snippet-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #1e2127;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red { background: #ff5f57; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.tab {
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s;
+}
+
+.tab img {
+  width: 16px;
+  height: 16px;
+}
+
+.tab.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.code-content {
+  padding: 15px;
+  border-radius: 0 0 12px 12px;
+  background: #242936;
+}
+
+pre {
+  margin: 0;
+}
+
+.code-content code {
+  background: #242936;
+}
+
+/* Image Grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+  gap: 20px; /* Space between images */
+  margin-top: 20px;
+}
+
+.image-item {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(28, 42, 64, 0.9); /* Background for the image container */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px; /* Padding inside the container */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.image-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.grid-image {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-item:hover .grid-image {
+  transform: translateY(-5px);
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.image-caption {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #E0E7EC;
+  font-weight: 500; /* Slightly bold text */
+  /* text-align: center; */
+}
+
+/* Expanded Image Overlay */
+.expanded-image-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 30, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.expanded-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.close-expanded-image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: #E0E7EC;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-expanded-image:hover {
   color: #00CED1;
 }
 
@@ -430,29 +681,33 @@ form button {
 form button:hover {
   background: #00B4B4;
   color: #ffffff;
+  transform: scale(1.05); /* Slight scaling effect for emphasis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 /* Certificates Section */
 .certificates-section {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .certificates-section h2 {
   font-size: 2rem;
   color: #FFFFFF;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between certificate cards */
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   width: 90%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
+  padding: 20px 0;
 }
 
 .certificate-card {
@@ -463,11 +718,20 @@ form button:hover {
   color: #E0E7EC;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .certificate-card h3 {
   color: #00CED1;
   margin-bottom: 10px;
+  font-size: 1.2rem;
+  min-height: 2.5rem;
+}
+
+.certificate-card h4 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  min-height: 2.5rem;
 }
 
 .certificate-card p {
@@ -478,11 +742,12 @@ form button:hover {
 
 .view-code {
   display: inline-block;
-  padding: 8px 15px;
+  padding: 8px 16px;
   background: #00CED1;
   color: #0A0F1E;
-  border-radius: 5px;
   text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
   font-weight: bold;
   transition: background 0.3s ease;
 }
@@ -490,12 +755,198 @@ form button:hover {
 .view-code:hover {
   background: #00B4B4;
   color: #E0E7EC;
+  transform: scale(1.05); /* Slight scaling effect for emphasis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Contact Section Styling */
+.contact {
+  background: linear-gradient(135deg, #121826, #0A0F1E);
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.contact iframe {
+  width: 90%;
+  max-width: 800px;
+  height: 600px;
+  background: rgba(28, 42, 64, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Contact Form Popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 30, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  background: #1C2A40;
+  padding: 30px; /* Increased padding */
+  border-radius: 8px;
+  text-align: center;
+  color: #E0E7EC;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  max-width: 500px; /* Slightly increased width */
+  margin: auto;
+}
+
+.popup-content h3 {
+  font-size: 1.7rem; /* Slightly larger font size */
+  color: #00CED1;
+  margin-bottom: 20px; /* Increased spacing below the heading */
+}
+
+.popup-content p {
+  font-size: 1.1rem; /* Slightly larger font size */
+  margin-bottom: 25px; /* Increased spacing below the paragraph */
+}
+
+.popup-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 30px; /* Increased spacing below the list */
+}
+
+.popup-content ul li {
+  font-size: 1rem; /* Slightly larger font size */
+  margin-bottom: 15px; /* Increased spacing between list items */
+}
+
+.popup-content ul li strong {
+  color: #00CED1;
+  margin-right: 10px; /* Increased spacing between label and value */
+}
+
+/* Close button styling */
+.close-popup {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1.5rem; /* Increased spacing above the close button */
+  margin-right: 0.8rem; /* Increased spacing to the left */
+  padding: 0.8rem 1.5rem; /* Increased padding inside the button */
+  background: #00CED1;
+  color: #021519;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem; /* Slightly larger font size */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.close-popup:hover {
+  background: #00B4B4;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content button.close-popup {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #00CED1;
+  color: #021519;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.popup-content button.close-popup:hover {
+  background: #00B4B4;
+  color: #ffffff;
+  transform: scale(1.05); /* Slight scaling effect for emphasis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Fix Autofill Background and Text Colors */
+form input:-webkit-autofill,
+form textarea:-webkit-autofill {
+  background-color: rgba(28, 42, 64, 0.8) !important; /* Match the original background */
+  color: #E0E7EC !important; /* Match the original text color */
+  box-shadow: 0 0 0px 1000px rgba(28, 42, 64, 0.8) inset; /* Override browser styles */
+}
+
+/* Placeholder Styling */
+form input::placeholder,
+form textarea::placeholder {
+  color: rgba(224, 231, 236, 0.7); /* Subtle placeholder color */
+}
+
+/* Form Data Table Styling */
+.data-table {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.data-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px; 
+}
+
+.label {
+  font-weight: bold;
+  color: #00CED1;
+  min-width: 100px; /* Ensures consistent alignment */
+  text-align: left;
+}
+
+.value {
+  color: #E0E7EC;
+  text-align: left;
+  word-break: break-word; /* Handles long values */
+  flex-grow: 1;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Ensure a maximum of 3 items per row */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr); /* Force 3 columns on larger screens */
+  }
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Allow flexible columns */
   }
 
   .skills-grid {
@@ -505,11 +956,12 @@ form button:hover {
 
 @media (max-width: 768px) {
   .navbar {
-    max-width: 95%;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    padding: 10px 15px;
+    padding: 5px 8px;
+    max-width: 95%;
+    min-width: 65%;
   }
 
   .navbar a {
@@ -518,8 +970,7 @@ form button:hover {
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
-    width: 95%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Smaller columns for tablets */
   }
 
   .project {
@@ -574,6 +1025,10 @@ form button:hover {
     font-size: 1.1rem;
   }
 
+  .certificates-grid  {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
   .section h1,
   .section h2 {
     font-size: 2rem;
@@ -582,10 +1037,26 @@ form button:hover {
   .section p {
     font-size: 1rem;
   }
+
+  .tech-icons {
+    gap: 0.5rem; /* Reduce gap for smaller screens */
+  }
+
+  .tech-icon-container {
+    width: 40px; /* Smaller container for smaller screens */
+    height: 40px;
+    padding: 0.4rem;
+  }
+
+  .tech-icon-container img {
+    width: 25px; /* Smaller icons for smaller screens */
+    height: 25px;
+  }
 }
 
 @media (max-width: 480px) {
   .projects-grid {
+    grid-template-columns: 1fr; /* Single column for mobile */
     gap: 15px;
   }
 
@@ -631,12 +1102,12 @@ form button:hover {
 
   .navbar {
     top: 10px;
-    max-width: 100%;
-    padding: 8px 12px;
+    min-width: 100%;
+    padding: 2px 2px;
   }
   .navbar a {
-    font-size: 0.7rem;
-    padding: 6px 8px;
+    font-size: 0.59rem;
+    padding: 2px 2px;
   }
 
   .section h1,
@@ -646,4 +1117,23 @@ form button:hover {
   .section p {
     font-size: 0.9rem;
   }
+
+  .tech-icons {
+    gap: 0.4rem; /* Further reduce gap for very small screens */
+  }
+
+  .tech-icon-container {
+    width: 35px; /* Even smaller container for very small screens */
+    height: 35px;
+    padding: 0.3rem;
+  }
+
+  .tech-icon-container img {
+    width: 20px; /* Even smaller icons for very small screens */
+    height: 20px;
+  }
+
+  .certificates-grid  {
+    grid-template-columns: repeat(1, 1fr);
+    }
 }
