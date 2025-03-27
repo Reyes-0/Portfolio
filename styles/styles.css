@@ -661,6 +661,10 @@ pre {
   width: 100%;
 }
 
+#expanded-image-overlay {
+  transition: opacity 0.2s ease;
+}
+
 /* Expanded Image Overlay */
 .expanded-image-overlay {
   display: none;
