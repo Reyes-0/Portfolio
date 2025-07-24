@@ -8,9 +8,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.3/dist/vanilla-tilt.min.js"></script>
 </head>
 <body>
+  <canvas id="bg-network"></canvas>
   <!-- Navbar -->
   <nav class="navbar">
     <a href="#home">Home</a>
@@ -20,11 +23,14 @@
     <a href="#qualification">Qualification</a>
     <a href="#contact">Contact</a>
   </nav>
+  <div id="scroll-progress"></div>
 
   <!-- Home Sections -->
-  <div id="home" class="section home">
-    <h1>Hi there, I'm Arkar</h1>
-    <h2>AI & Data Engineer | Tech Enthusiast</h2>
+  <div id="home" class="section home has-bg-network">
+    <h1>
+      <span id="typewriter-text-1"></span><br>
+      <span id="typewriter-text-2"></span><span class="typewriter-cursor"></span>
+    </h1>
     
     <!-- About Me Card -->
     <div class="about-card">
@@ -44,11 +50,11 @@
     </div>
   </div>
 
-  <div id="projects" class="section projects">
+  <div id="projects" class="section projects has-bg-network">
     <h2>Projects</h2>
     <div class="projects-grid">
   <!-- Project 1 -->
-  <div class="project">
+  <div class="project" data-aos="fade-up" data-aos-delay="100">
     <h3>AI Football Commentary</h3>
     <div class="tech-icons">
       <div class="tech-icon-container">
@@ -75,7 +81,7 @@
   </div>
 
       <!-- Project 2 -->
-      <div class="project">
+      <div class="project" data-aos="fade-up" data-aos-delay="200">
         <h3>Dementia Wandering Prevention System</h3>
         <div class="tech-icons">
           <div class="tech-icon-container">
@@ -101,7 +107,7 @@
       </div>
 
       <!-- Project 3 -->
-      <div class="project">
+      <div class="project" data-aos="fade-up" data-aos-delay="300">
         <h3>Xception Image Classifier with Kubernetes</h3>
         <div class="tech-icons">
           <div class="tech-icon-container">
@@ -133,7 +139,7 @@
       </div>
 
       <!-- Project 4 -->
-      <div class="project">
+      <div class="project" data-aos="fade-up" data-aos-delay="400">
         <h3>Resume Classfication</h3>
         <div class="tech-icons">
           <div class="tech-icon-container">
@@ -155,7 +161,7 @@
       </div>
 
       <!-- Project 5 -->
-      <div class="project">
+      <div class="project" data-aos="fade-up" data-aos-delay="500">
         <h3>ML-Based Repeat Buyer Prediction</h3>
         <div class="tech-icons">
           <div class="tech-icon-container">
@@ -183,7 +189,7 @@
       </div>
 
       <!-- Project 6 -->
-      <div class="project">
+      <div class="project" data-aos="fade-up" data-aos-delay="600">
         <h3>IoT Weather Station & Urban Farming</h3>
         <div class="tech-icons">
           <div class="tech-icon-container">
@@ -211,7 +217,7 @@
       </div>
 
       <!-- Project 1 -->
-      <div class="project">
+      <div class="project" data-aos="fade-up" data-aos-delay="700">
         <h3>Insights on Mushroom Growing</h3>
         <div class="tech-icons">
           <div class="tech-icon-container">
@@ -239,105 +245,105 @@
   </div>
 
 <!-- Skill Section -->
-<div id="skills" class="section skills">
+<div id="skills" class="section skills has-bg-network">
   <h2>Skills</h2>
   <div class="skills-grid">
     <!-- Skill 1 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Logo" class="skill-logo">
       <h3>Python</h3>
     </div>
 
     <!-- Skill 2 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="SQL Logo" class="skill-logo">
       <h3>C++</h3>
     </div>
 
     <!-- Skill 2 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="SQL Logo" class="skill-logo">
       <h3>C#</h3>
     </div>
 
     <!-- Skill 2 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="SQL Logo" class="skill-logo">
       <h3>HTML</h3>
     </div>
 
     <!-- Skill 2 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="SQL Logo" class="skill-logo">
       <h3>CSS</h3>
     </div>
 
     <!-- Skill 2 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="600">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="SQL Logo" class="skill-logo">
       <h3>JavaScript</h3>
     </div>
 
     <!-- Skill 8 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="700">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS Logo" class="skill-logo">
       <h3>AWS</h3>
     </div>
 
     <!-- Skill 9 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="800">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure Logo" class="skill-logo">
       <h3>Azure</h3>
     </div>
     
     <!-- Skill 2 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="900">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="SQL Logo" class="skill-logo">
       <h3>MySQL</h3>
     </div>
 
     <!-- Skill 11 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="1000">
       <img src="https://img.icons8.com/color/48/power-bi-2021.png" alt="Power BI Logo" class="skill-logo">
       <h3>Power BI</h3>
     </div>
 
     <!-- Skill 3 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="1100">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas Logo" class="skill-logo">
       <h3>Pandas</h3>
     </div>
 
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="1200">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="Sckit-learn Logo" class="skill-logo">
       <h3>Scikit-learn</h3>
     </div>
 
     <!-- Skill 4 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="1300">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="Numpy Logo" class="skill-logo">
       <h3>Numpy</h3>
     </div>
 
     <!-- Skill 5 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="1400">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/plotly/plotly-original.svg" alt="Plotly Logo" class="skill-logo">
       <h3>Plotly</h3>
     </div>
 
     <!-- Skill 7 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="1500">
       <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn Logo" class="skill-logo seaborn-logo">
       <h3>Seaborn</h3>
     </div>
 
     <!-- Skill 7 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="1600">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow Logo" class="skill-logo">
       <h3>TensorFlow</h3>
     </div>
 
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="1700">
       <!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/keras/keras-original-wordmark.svg" alt="Keras Logo" class="skill-logo"> -->
       <i class="devicon-keras-plain-wordmark colored" style="font-size: 72px;" class="skill-logo"></i>
 
@@ -345,7 +351,7 @@
     </div>
 
     <!-- Skill 7 -->
-    <div class="skill-card">
+    <div class="skill-card" data-aos="fade-up" data-aos-delay="1800">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV Logo" class="skill-logo">
       <h3>OpenCV</h3>
     </div>
@@ -353,7 +359,7 @@
 </div>
 
   <!-- Experience Section -->
-  <div id="experience" class="section experience">
+  <div id="experience" class="section experience has-bg-network">
     <h2>Work Experience</h2>
     <div class="job-card">
       <h3>Data Engineer, Developer Intern</h3>
@@ -387,7 +393,7 @@
   </div>
 
   <!-- Qualification Section -->
-  <div id="qualification" class="section qualification">
+  <div id="qualification" class="section qualification has-bg-network">
     <h2>Education</h2>
     <div class="qualification-card">
       <h3>Diploma in AI & Data Engineering</h3>
@@ -423,8 +429,9 @@
   </div>
 
 <!-- Contact Section -->
-<div id="contact" class="section contact">
+<div id="contact" class="section contact has-bg-network">
   <h2>Contact</h2>
+  <div>
   <form id="custom-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdabOoukpL3ONlZQNKw7hBBYMFDw8RRxm6wTfH5MjTk3anuSw/formResponse" method="POST">
     <!-- Name Field -->
     <input type="text" id="name" name="entry.1451674361" placeholder="Your Name" required />
@@ -438,6 +445,7 @@
     <!-- Submit Button -->
     <button type="submit">Submit</button>
   </form>
+  </div>
   
   <!-- Popup Acknowledgment -->
   <div id="popup" class="popup hidden">

@@ -71,28 +71,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // Open modal
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
+      console.log("Learn More button clicked"); // <-- Add this
       const modalId = button.getAttribute("data-modal");
+      console.log("Target modal ID:", modalId); // <-- Add this
       const modal = document.getElementById(modalId);
-
+      console.log("Modal element found:", modal); // <-- Add this
       if (modal) {
+        console.log("Displaying modal"); // <-- Add this
         // Store original videos
         modal.querySelectorAll('video').forEach(video => {
-          if (!originalVideos.has(video.id)) {
-            originalVideos.set(video.id, video.innerHTML);
-          }
+            // Consider adding try/catch here temporarily if you suspect issues
+            if (!originalVideos.has(video.id)) {
+                originalVideos.set(video.id, video.innerHTML);
+            }
         });
-
         modal.style.display = "flex";
         document.body.classList.add("overflow-hidden");
-        modal.setAttribute('aria-hidden', 'false');
-        
-        // Restore videos
-        modal.querySelectorAll('video').forEach(video => {
-          if (video.innerHTML === '' && originalVideos.has(video.id)) {
-            video.innerHTML = originalVideos.get(video.id);
-            video.load();
-          }
-        });
+      } else {
+         console.warn("Modal not found for ID:", modalId); // <-- Add this
       }
     });
   });
@@ -362,7 +358,332 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // --- Animation Libraries Init ---
+  if (window.AOS) {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 80,
+      easing: 'ease-in-out',
+    });
+  }
+
+  // --- Neural Network Canvas Background ---
+const bgCanvas = document.getElementById('bg-network');
+let ctx, nodes = [], mouse = { x: null, y: null };
+let width = 0, height = 0;
+
+function resizeCanvas() {
+  width = window.innerWidth;
+  height = window.innerHeight;
+  const dpr = window.devicePixelRatio || 1;
+  bgCanvas.width = width * dpr;
+  bgCanvas.height = height * dpr;
+  bgCanvas.style.width = width + 'px';
+  bgCanvas.style.height = height + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+function randomBetween(min, max) {
+  return min + Math.random() * (max - min);
+}
+
+function createNodes(count) {
+  const nodesArr = [];
+  for (let i = 0; i < count; i++) {
+    nodesArr.push({
+      x: randomBetween(0, width),
+      y: randomBetween(0, height),
+      vx: randomBetween(-0.3, 0.3),
+      vy: randomBetween(-0.3, 0.3),
+      r: randomBetween(1.5, 3.5),
+    });
+  }
+  return nodesArr;
+}
+
+function drawNetwork() {
+  ctx.clearRect(0, 0, width, height);
+  const maxDist = 220; // <--- Increased connection distance (e.g., from 140)
+  const baseOpacity = 0.18;
+  // Draw lines between close nodes
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dx = nodes[i].x - nodes[j].x;
+      const dy = nodes[i].y - nodes[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < maxDist) {
+        ctx.strokeStyle = `rgba(0,206,209,${baseOpacity * (1 - dist / maxDist)})`;
+        ctx.beginPath();
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        ctx.lineTo(nodes[j].x, nodes[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+
+  // Draw nodes
+  nodes.forEach((node) => {
+    const grad = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.r * 2);
+    grad.addColorStop(0, 'rgba(0,206,209,0.9)');
+    grad.addColorStop(1, 'rgba(10,15,30,0.1)');
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, node.r, 0, 2 * Math.PI);
+    ctx.fillStyle = grad;
+    ctx.fill();
+  });
+}
+
+function animateNetwork() {
+  nodes.forEach((node) => {
+    node.x += node.vx;
+    node.y += node.vy;
+
+    // Bounce off edges
+    if (node.x <= 0 || node.x >= width) node.vx *= -1;
+    if (node.y <= 0 || node.y >= height) node.vy *= -1;
+
+    // Mouse interaction
+    if (mouse.x !== null && mouse.y !== null) { // Check if mouse position is known
+      const dx = node.x - mouse.x;  // Calculate difference in X
+      const dy = node.y - mouse.y;  // Calculate difference in Y
+      const dist = Math.sqrt(dx * dx + dy * dy); // Calculate distance to mouse
+
+      // If the node is within 80 pixels of the mouse cursor
+      if (dist < 80) {
+        // Apply a small force to the node, pushing it away from the cursor
+        node.vx += dx / 1500; // Adjust velocity based on distance/direction
+        node.vy += dy / 1500;
+      }
+    }
+  });
+
+  drawNetwork();
+  requestAnimationFrame(animateNetwork);
+}
+
+function initNetwork() {
+  if (!bgCanvas) return;
+  ctx = bgCanvas.getContext('2d');
+  resizeCanvas();
+  nodes = createNodes(250); // keep density fixed
+  animateNetwork();
+}
+
+window.addEventListener('resize', () => {
+  resizeCanvas();
 });
+
+document.addEventListener('mousemove', (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+initNetwork();
+
+  // --- Button Ripple Effect ---
+  function addRippleEffect(e) {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+    button.appendChild(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove());
+  }
+  document.querySelectorAll('.learn-more, .github-repo, .view-code').forEach(btn => {
+    btn.addEventListener('click', addRippleEffect);
+  });
+
+  // --- Typewriter Effect for Homepage Title (two lines) ---
+  const typewriterText1 = document.getElementById('typewriter-text-1');
+  const typewriterStr1 = "Hi there, I'm Arkar\nAI & Data Engineer | Tech Enthusiast";
+  let typeIdx1 = 0;
+
+  function typeWriter() {
+    if (typeIdx1 <= typewriterStr1.length) {
+      // Add cursor directly to the text (zero-width)
+      typewriterText1.innerHTML = `
+        ${typewriterStr1.slice(0, typeIdx1).replace(/\n/g, '<br>')}
+        <span class="typewriter-cursor">|</span>
+      `;
+      typeIdx1++;
+      setTimeout(typeWriter, 70);
+    } else {
+      // Final render without cursor
+      typewriterText1.innerHTML = typewriterStr1.replace(/\n/g, '<br>');
+    }
+  }
+
+  if (typewriterText1) typeWriter();
+
+  // --- Navbar Sticky Fade-in/Out on Scroll Direction ---
+  // --- Scroll Progress Bar ---
+  const scrollProgress = document.getElementById('scroll-progress');
+  function updateScrollProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (scrollProgress) scrollProgress.style.width = progress + '%';
+  }
+  window.addEventListener('scroll', updateScrollProgress);
+  updateScrollProgress();
+
+  // --- Page Load and Section Entrance Animations ---
+  function animateNavbarOnHome() {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+      navbar.classList.add('navbar-animate-in');
+      navbar.addEventListener('animationend', () => {
+        navbar.classList.remove('navbar-animate-in');
+      }, { once: true });
+    }
+  }
+  function animateSection(section) {
+    if (!section) return;
+    section.classList.add('animate-in');
+    section.addEventListener('animationend', () => {
+      section.classList.remove('animate-in');
+    }, { once: true });
+    // Animate direct children (for staggered effect)
+    Array.from(section.children).forEach((child, i) => {
+      child.classList.add('animate-in');
+      child.style.animationDelay = (0.1 + i * 0.08) + 's';
+      child.addEventListener('animationend', () => {
+        child.classList.remove('animate-in');
+        child.style.animationDelay = '';
+      }, { once: true });
+    });
+  }
+  // On initial load
+  window.addEventListener('DOMContentLoaded', () => {
+    const homeSection = document.getElementById('home');
+    if (window.scrollY < 100 && homeSection) {
+      animateNavbarOnHome();
+      animateSection(homeSection);
+    }
+  });
+  // On nav click, animate target section
+  document.querySelectorAll('.navbar a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        setTimeout(() => animateSection(targetSection), 350);
+      }
+    });
+  });
+  // On scroll, animate section when entering viewport (if not already animated)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('animate-in')) {
+        animateSection(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
+  document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+  });
+
+// --- Navbar Scroll Show/Hide Logic ---
+const navbar = document.querySelector('.navbar');
+let lastScrollY = window.scrollY;
+let ticking = false;
+let isFadedIn = false;
+
+function showNavbar() {
+  if (!navbar) return;
+  navbar.classList.add('navbar-visible');
+  navbar.classList.remove('navbar-hidden');
+}
+
+function hideNavbar() {
+  if (!navbar) return;
+  navbar.classList.add('navbar-hidden');
+  navbar.classList.remove('navbar-visible');
+}
+
+function fadeInNavbar() {
+  if (!navbar || isFadedIn) return;
+  navbar.classList.add('navbar-fade-in');
+  navbar.classList.remove('navbar-hidden');
+  isFadedIn = true;
+
+  // Optional: remove class after animation completes
+  navbar.addEventListener('animationend', () => {
+    navbar.classList.remove('navbar-fade-in');
+    showNavbar(); // Ensure it's visible after fade-in
+  }, { once: true });
+}
+
+// On initial load
+window.addEventListener('DOMContentLoaded', () => {
+  if (navbar) {
+    navbar.classList.remove('navbar-visible', 'navbar-hidden');
+    fadeInNavbar();
+  }
+});
+
+// Scroll direction logic
+let scrollTimeout;
+let lastDirection = 'up';
+
+window.addEventListener('scroll', () => {
+  if (!isFadedIn) return;
+
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY < 10) {
+    showNavbar();
+    lastDirection = 'up';
+    return;
+  }
+
+  if (currentScrollY > lastScrollY + 2) {
+    // Scrolling down
+    hideNavbar();
+    lastDirection = 'down';
+  } else if (currentScrollY < lastScrollY - 2) {
+    // Scrolling up
+    showNavbar();
+    lastDirection = 'up';
+  }
+
+  lastScrollY = currentScrollY;
+
+  // Auto-show navbar when scrolling stops
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    if (lastDirection === 'up') showNavbar();
+  }, 300);
+});
+});
+
+// --- Navbar Initial Fade-in Animation ---
+const navbar = document.querySelector('.navbar');
+
+function initNavbar() {
+  if (!navbar) return;
+  
+  // Reset classes
+  navbar.classList.remove('navbar-visible', 'navbar-hidden');
+  
+  // Trigger fade-in animation
+  navbar.classList.add('navbar-fade-in');
+  
+  // After animation completes, make navbar fully visible
+  navbar.addEventListener('animationend', () => {
+    navbar.classList.remove('navbar-fade-in');
+    navbar.classList.add('navbar-visible');
+  }, { once: true });
+}
+
+// Initialize navbar on page load
+window.addEventListener('DOMContentLoaded', initNavbar);
 
 // Helper functions
 function showError(inputElement, message) {
