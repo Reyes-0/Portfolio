@@ -467,12 +467,53 @@ function initNetwork() {
   if (!bgCanvas) return;
   ctx = bgCanvas.getContext('2d');
   resizeCanvas();
-  nodes = createNodes(250); // keep density fixed
+  
+  // Scale nodes based on screen size for optimal performance and visual density
+  let nodeCount;
+  if (width >= 1440) {
+    // Large Desktop - more nodes for rich visual effect
+    nodeCount = 350;
+  } else if (width >= 1024) {
+    // Desktop - good balance of performance and visual appeal
+    nodeCount = 250;
+  } else if (width >= 768) {
+    // Laptop - moderate number of nodes
+    nodeCount = 180;
+  } else if (width >= 481) {
+    // Tablet - fewer nodes for better performance
+    nodeCount = 120;
+  } else if (width >= 375) {
+    // Mobile Large - minimal nodes for smooth performance
+    nodeCount = 80;
+  } else {
+    // Mobile Small - very few nodes to ensure smooth performance
+    nodeCount = 50;
+  }
+  
+  nodes = createNodes(nodeCount);
   animateNetwork();
 }
 
 window.addEventListener('resize', () => {
   resizeCanvas();
+  
+  // Recalculate nodes based on new screen size
+  let nodeCount;
+  if (width >= 1440) {
+    nodeCount = 350;
+  } else if (width >= 1024) {
+    nodeCount = 250;
+  } else if (width >= 768) {
+    nodeCount = 180;
+  } else if (width >= 481) {
+    nodeCount = 120;
+  } else if (width >= 375) {
+    nodeCount = 80;
+  } else {
+    nodeCount = 50;
+  }
+  
+  nodes = createNodes(nodeCount);
 });
 
 document.addEventListener('mousemove', (e) => {
@@ -589,101 +630,10 @@ initNetwork();
     observer.observe(section);
   });
 
-// --- Navbar Scroll Show/Hide Logic ---
-const navbar = document.querySelector('.navbar');
-let lastScrollY = window.scrollY;
-let ticking = false;
-let isFadedIn = false;
-
-function showNavbar() {
-  if (!navbar) return;
-  navbar.classList.add('navbar-visible');
-  navbar.classList.remove('navbar-hidden');
-}
-
-function hideNavbar() {
-  if (!navbar) return;
-  navbar.classList.add('navbar-hidden');
-  navbar.classList.remove('navbar-visible');
-}
-
-function fadeInNavbar() {
-  if (!navbar || isFadedIn) return;
-  navbar.classList.add('navbar-fade-in');
-  navbar.classList.remove('navbar-hidden');
-  isFadedIn = true;
-
-  // Optional: remove class after animation completes
-  navbar.addEventListener('animationend', () => {
-    navbar.classList.remove('navbar-fade-in');
-    showNavbar(); // Ensure it's visible after fade-in
-  }, { once: true });
-}
-
-// On initial load
-window.addEventListener('DOMContentLoaded', () => {
-  if (navbar) {
-    navbar.classList.remove('navbar-visible', 'navbar-hidden');
-    fadeInNavbar();
-  }
+// Navbar is now always visible - no hiding functionality
 });
 
-// Scroll direction logic
-let scrollTimeout;
-let lastDirection = 'up';
-
-window.addEventListener('scroll', () => {
-  if (!isFadedIn) return;
-
-  const currentScrollY = window.scrollY;
-
-  if (currentScrollY < 10) {
-    showNavbar();
-    lastDirection = 'up';
-    return;
-  }
-
-  if (currentScrollY > lastScrollY + 2) {
-    // Scrolling down
-    hideNavbar();
-    lastDirection = 'down';
-  } else if (currentScrollY < lastScrollY - 2) {
-    // Scrolling up
-    showNavbar();
-    lastDirection = 'up';
-  }
-
-  lastScrollY = currentScrollY;
-
-  // Auto-show navbar when scrolling stops
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(() => {
-    if (lastDirection === 'up') showNavbar();
-  }, 300);
-});
-});
-
-// --- Navbar Initial Fade-in Animation ---
-const navbar = document.querySelector('.navbar');
-
-function initNavbar() {
-  if (!navbar) return;
-  
-  // Reset classes
-  navbar.classList.remove('navbar-visible', 'navbar-hidden');
-  
-  // Trigger fade-in animation
-  navbar.classList.add('navbar-fade-in');
-  
-  // After animation completes, make navbar fully visible
-  navbar.addEventListener('animationend', () => {
-    navbar.classList.remove('navbar-fade-in');
-    navbar.classList.add('navbar-visible');
-  }, { once: true });
-}
-
-// Initialize navbar on page load
-window.addEventListener('DOMContentLoaded', initNavbar);
+// Navbar is always visible - no initialization needed
 
 // Helper functions
 function showError(inputElement, message) {
