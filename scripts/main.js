@@ -224,16 +224,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Smooth scrolling
+  // Smooth scrolling with mobile optimization
   document.querySelectorAll('.navbar a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const targetElement = document.querySelector(this.getAttribute('href'));
       if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop,
-          behavior: 'smooth'
-        });
+        // Check if device is mobile
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+          // Use native smooth scrolling for mobile
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        } else {
+          // Use window.scrollTo for desktop
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+          });
+        }
       }
     });
   });
@@ -250,8 +262,47 @@ document.addEventListener("DOMContentLoaded", () => {
     if (navLinks[index]) navLinks[index].classList.add("active");
   };
 
-  window.addEventListener("scroll", updateActiveLink);
+  // Optimized scroll event listener for mobile performance
+  let ticking = false;
+  
+  function updateActiveLinkOptimized() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateActiveLink();
+        updateSectionVisibility();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  
+  // Enhanced section visibility for smooth transitions
+  function updateSectionVisibility() {
+    const windowHeight = window.innerHeight;
+    const scrollY = window.scrollY;
+    
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionBottom = sectionTop + sectionHeight;
+      
+      // Check if section is in viewport
+      const isInView = (
+        (scrollY + windowHeight * 0.3 >= sectionTop) &&
+        (scrollY <= sectionBottom - windowHeight * 0.3)
+      );
+      
+      if (isInView) {
+        section.classList.add('visible');
+      } else {
+        section.classList.remove('visible');
+      }
+    });
+  }
+  
+  window.addEventListener("scroll", updateActiveLinkOptimized, { passive: true });
   updateActiveLink();
+  updateSectionVisibility();
 
   // Form submission
   const form = document.getElementById("custom-form");

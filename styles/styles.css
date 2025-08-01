@@ -10,6 +10,50 @@ html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   height: 100%;
+  scroll-padding-top: 80px; /* Account for fixed navbar */
+}
+
+/* Optimize scrolling for all screen sizes */
+body {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Enhanced section transitions for smooth page changes */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Disable scroll-snap on mobile for better performance */
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: none;
+  }
+  
+  .section {
+    scroll-snap-align: none;
+    /* Optimize for mobile scrolling */
+    transform: translateZ(0) translateY(20px); /* Force hardware acceleration */
+    backface-visibility: hidden; /* Prevent flickering */
+  }
+  
+  .section.visible {
+    transform: translateZ(0) translateY(0);
+  }
+  
+  /* Improve scroll performance on mobile */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 body {
@@ -17,6 +61,7 @@ body {
   color: #E0E7EC;
   overflow-x: hidden;
   padding-top: 0;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 body.overflow-hidden {
@@ -34,6 +79,7 @@ body.overflow-hidden {
   scroll-snap-align: start;
   position: relative;
   padding: 130px 20px 130px 20px;
+  will-change: transform; /* Optimize for mobile performance */
 }
 
 /* Background Gradients */
@@ -84,8 +130,9 @@ body.overflow-hidden {
 .social-links a:hover {
   background: #00CED1;
   color: #0A0F1E;
-  transform: scale(1.05);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(0,206,209,0.10), 0 2px 8px rgba(0,0,0,0.10);
+  z-index: 2;
 }
 
 .fab {
@@ -171,6 +218,7 @@ body.overflow-hidden {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000; /* Ensure text is above background */
+  transition: transform 0.32s cubic-bezier(0.4,0,0.2,1), box-shadow 0.32s cubic-bezier(0.4,0,0.2,1), background 0.32s;
 }
 
 .about-card p {
@@ -222,8 +270,9 @@ body.overflow-hidden {
 }
 
 .skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0,206,209,0.10), 0 2px 8px rgba(0,0,0,0.10);
+  z-index: 2;
 }
 
 /* Skill Logo */
@@ -318,6 +367,7 @@ body.overflow-hidden {
   justify-content: space-between;
   height: 100%;
   z-index: 1000; /* Ensure text is above background */
+  transition: transform 0.32s cubic-bezier(0.4,0,0.2,1), box-shadow 0.32s cubic-bezier(0.4,0,0.2,1), background 0.5s;
 }
 
 .project h3 {
@@ -358,8 +408,9 @@ body.overflow-hidden {
 }
 
 .tech-icon-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 48px rgba(0,206,209,0.25), 0 4px 16px rgba(0,0,0,0.15);
+  z-index: 2;
 }
 
 .tech-icon-container img {
@@ -636,8 +687,9 @@ pre {
 }
 
 .image-item:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+  transform: translateY(-8px); /* Lift effect on hover */
+  box-shadow: 0 8px 24px rgba(0,206,209,0.10), 0 2px 8px rgba(0,0,0,0.10); /* Enhanced shadow on hover */
+  z-index: 2;
 }
 
 .grid-image {
@@ -1097,6 +1149,16 @@ form textarea::placeholder {
     font-size: 16px;
     padding: 10px 15px;
   }
+  
+  /* Enhanced smooth scrolling for large screens */
+  .section {
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(30px);
+  }
+  
+  .section.visible {
+    transform: translateY(0);
+  }
 }
 
 /* Desktop (1024px - 1439px) */
@@ -1136,6 +1198,16 @@ form textarea::placeholder {
   .navbar a {
     font-size: 14px;
     padding: 8px 12px;
+  }
+  
+  /* Smooth scrolling for desktop */
+  .section {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(25px);
+  }
+  
+  .section.visible {
+    transform: translateY(0);
   }
 }
 
@@ -1221,6 +1293,16 @@ form textarea::placeholder {
   .tech-icon-container img {
     width: 22px;
     height: 22px;
+  }
+  
+  /* Optimized scrolling for laptop */
+  .section {
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(20px);
+  }
+  
+  .section.visible {
+    transform: translateY(0);
   }
 }
 
@@ -1326,6 +1408,16 @@ form textarea::placeholder {
   .grid-image {
     height: 250px;
   }
+  
+  /* Smooth scrolling for tablet */
+  .section {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(15px);
+  }
+  
+  .section.visible {
+    transform: translateY(0);
+  }
 }
 
 /* Mobile Large (375px - 480px) */
@@ -1421,6 +1513,16 @@ form textarea::placeholder {
   .grid-image {
     height: 200px;
   }
+  
+  /* Optimized scrolling for mobile large */
+  .section {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(10px);
+  }
+  
+  .section.visible {
+    transform: translateY(0);
+  }
 }
 
 /* Mobile Small (320px - 374px) */
@@ -1515,6 +1617,16 @@ form textarea::placeholder {
   
   .grid-image {
     height: 180px;
+  }
+  
+  /* Optimized scrolling for mobile small */
+  .section {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(8px);
+  }
+  
+  .section.visible {
+    transform: translateY(0);
   }
   
   /* Additional responsive improvements for very small screens */
@@ -1710,17 +1822,20 @@ form textarea::placeholder {
 .job-card,
 .qualification-card,
 .certificate-card {
-  transition: transform 0.32s cubic-bezier(0.4,0,0.2,1), box-shadow 0.32s cubic-bezier(0.4,0,0.2,1), background 0.32s;
+  transition: transform 0.32s cubic-bezier(0.4,0,0.2,1), box-shadow 0.32s cubic-bezier(0.4,0,0.2,1), background 0.5s;
 }
 .project:hover,
 .skill-card:hover,
 .job-card:hover,
 .qualification-card:hover,
-.certificate-card:hover {
+.certificate-card:hover,
+.about-card:hover,
+.tech-icon-container:hover,
+.image-item:hover {
   transform: translateY(-8px);
   /* keep background color change as is */
-  box-shadow: 0 8px 24px rgba(0,206,209,0.10), 0 2px 8px rgba(0,0,0,0.10);
-  z-index: 2;
+  box-shadow: 0 8px 48px rgba(0,206,209,0.25), 0 4px 16px rgba(0,0,0,0.15);
+  z-index: 2000;
 }
 
 /* Neural Network Canvas Background */
